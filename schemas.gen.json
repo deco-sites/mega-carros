@@ -71,7 +71,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
-              "deco-sites/links/sections/Links.tsx",
+              "deco-sites/mega-carros/sections/Links.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configOCC.global.tsx",
@@ -7130,7 +7130,7 @@
       "format": "image-uri",
       "title": "Image"
     },
-    "ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link": {
       "type": "object",
       "properties": {
         "icon": {
@@ -7291,14 +7291,14 @@
       ],
       "title": "Link"
     },
-    "ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link[]": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link"
       },
       "title": "Link[]"
     },
-    "ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social": {
       "type": "object",
       "properties": {
         "href": {
@@ -7342,14 +7342,14 @@
       ],
       "title": "Social"
     },
-    "ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social[]": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social"
       },
       "title": "Social[]"
     },
-    "ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "header": {
@@ -7395,7 +7395,7 @@
           "type": "object",
           "properties": {
             "items": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link[]",
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Link[]",
               "title": "Items"
             },
             "style": {
@@ -7441,7 +7441,7 @@
           "type": "object",
           "properties": {
             "items": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social[]",
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Social[]",
               "title": "Items"
             },
             "style": {
@@ -7482,7 +7482,7 @@
         }
       },
       "required": [],
-      "title": "deco-sites/links/components/ui/Links.tsx@Props"
+      "title": "deco-sites/mega-carros/components/ui/Links.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -9776,12 +9776,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9saW5rcy9zZWN0aW9ucy9MaW5rcy50c3g=": {
-      "title": "deco-sites/links/sections/Links.tsx",
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9MaW5rcy50c3g=": {
+      "title": "deco-sites/mega-carros/sections/Links.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL3VpL0xpbmtzLnRzeA==@Props"
         }
       ],
       "required": [
@@ -9791,9 +9791,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/links/sections/Links.tsx"
+            "deco-sites/mega-carros/sections/Links.tsx"
           ],
-          "default": "deco-sites/links/sections/Links.tsx"
+          "default": "deco-sites/mega-carros/sections/Links.tsx"
         }
       }
     },
@@ -10916,7 +10916,7 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9saW5rcy9zZWN0aW9ucy9MaW5rcy50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9MaW5rcy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
