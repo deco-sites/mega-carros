@@ -81,6 +81,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/mega-carros/sections/Footer.tsx",
               "deco-sites/mega-carros/sections/Header.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
@@ -7798,6 +7799,176 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link"
+      },
+      "title": "Link[]"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@MediaLink": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "menu",
+              "default": "menu"
+            },
+            {
+              "type": "string",
+              "const": "search",
+              "default": "search"
+            },
+            {
+              "type": "string",
+              "const": "x-circle",
+              "default": "x-circle"
+            },
+            {
+              "type": "string",
+              "const": "chevrons-left",
+              "default": "chevrons-left"
+            },
+            {
+              "type": "string",
+              "const": "chevrons-right",
+              "default": "chevrons-right"
+            },
+            {
+              "type": "string",
+              "const": "chevron-left",
+              "default": "chevron-left"
+            },
+            {
+              "type": "string",
+              "const": "chevron-right",
+              "default": "chevron-right"
+            },
+            {
+              "type": "string",
+              "const": "play-circle",
+              "default": "play-circle"
+            },
+            {
+              "type": "string",
+              "const": "acessorios",
+              "default": "acessorios"
+            },
+            {
+              "type": "string",
+              "const": "financiamento",
+              "default": "financiamento"
+            },
+            {
+              "type": "string",
+              "const": "blindagem",
+              "default": "blindagem"
+            },
+            {
+              "type": "string",
+              "const": "estetica",
+              "default": "estetica"
+            },
+            {
+              "type": "string",
+              "const": "seguro",
+              "default": "seguro"
+            },
+            {
+              "type": "string",
+              "const": "pelicula-seguranca",
+              "default": "pelicula-seguranca"
+            },
+            {
+              "type": "string",
+              "const": "instagram",
+              "default": "instagram"
+            },
+            {
+              "type": "string",
+              "const": "facebook",
+              "default": "facebook"
+            },
+            {
+              "type": "string",
+              "const": "youtube",
+              "default": "youtube"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "icon",
+        "href"
+      ],
+      "title": "MediaLink"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@MediaLink[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@MediaLink"
+      },
+      "title": "MediaLink[]"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link[]",
+          "title": "Links"
+        },
+        "copyright": {
+          "type": "string",
+          "title": "Copyright"
+        },
+        "policyLinks": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link[]",
+          "title": "Policy Links"
+        },
+        "medias": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@MediaLink[]",
+          "title": "Medias"
+        },
+        "brands": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]",
+          "title": "Brands"
+        }
+      },
+      "required": [
+        "links",
+        "copyright",
+        "policyLinks",
+        "medias",
+        "brands"
+      ],
+      "title": "deco-sites/mega-carros/containers/Footer.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
       "properties": {
@@ -10420,6 +10591,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Gb290ZXIudHN4": {
+      "title": "deco-sites/mega-carros/sections/Footer.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/Footer.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/Footer.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/mega-carros/sections/Header.tsx",
       "type": "object",
@@ -11656,6 +11848,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Gb290ZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZWFkZXIudHN4"

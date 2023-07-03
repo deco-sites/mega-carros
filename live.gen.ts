@@ -7,7 +7,8 @@ import * as $$$0 from "./loaders/brands.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/Header.tsx";
-import * as $$$$$$$$0 from "./sections/Header.tsx";
+import * as $$$$$$$$0 from "./sections/Footer.tsx";
+import * as $$$$$$$$1 from "./sections/Header.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -183,7 +184,8 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$0,
+    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$0,
+    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$1,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
