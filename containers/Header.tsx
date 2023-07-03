@@ -1,26 +1,21 @@
 import { useRef } from "preact/hooks";
+import { Brand } from "mc/types/Brand.ts";
 import { asset } from "$fresh/runtime.ts";
 import Icon from "mc/components/Icon.tsx";
 import Button from "mc/components/Button.tsx";
+import { LoaderReturnType } from "$live/types.ts";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
 import Drawer, { DrawerRef } from "mc/islands/Drawer.tsx";
-import { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Link {
   label: string;
   href: string;
 }
 
-export interface Brand {
-  label: string;
-  image: LiveImage;
-  href: string;
-}
-
 export interface Props {
   links: Link[];
   action: Link;
-  brands: Brand[];
+  brands: LoaderReturnType<Brand[]>;
 }
 
 export default function Header(props: Props) {

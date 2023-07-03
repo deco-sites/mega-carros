@@ -48,6 +48,7 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
+              "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
@@ -3929,6 +3930,59 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "image": {
+          "type": "string",
+          "title": "Image"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "image",
+        "href"
+      ],
+      "title": "Brand"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand"
+          },
+          "title": "deco-sites/mega-carros/types/Brand.ts@Brand[]"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/brands.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/brands.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/brands.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
@@ -7338,41 +7392,6 @@
       },
       "title": "Link[]"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Brand": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "label",
-        "image",
-        "href"
-      ],
-      "title": "Brand"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Brand[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Brand"
-      },
-      "title": "Brand[]"
-    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -7385,7 +7404,7 @@
           "title": "Action"
         },
         "brands": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Brand[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]",
           "title": "Brands"
         }
       },
@@ -7871,6 +7890,11 @@
         "defaultLocale"
       ],
       "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
       "anyOf": [
@@ -9715,6 +9739,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kcy50cw==": {
+      "title": "deco-sites/mega-carros/loaders/brands.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/brands.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/brands.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz": {
       "title": "NuvemShop - PDP",
       "type": "object",
@@ -11481,6 +11521,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kcy50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz"
