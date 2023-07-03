@@ -68,6 +68,11 @@ function GlobalTags() {
             font-display: swap;
             src: url(${asset("/fonts/barlow-700.ttf")});
           }
+
+          body {
+            background: #000000;
+            color: #FFFFFF;
+          }
       `,
         }}
       />
