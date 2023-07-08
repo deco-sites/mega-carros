@@ -66,6 +66,7 @@
               "deco-sites/std/loaders/vtex/proxy.ts",
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
+              "./islands/ContactForm.tsx",
               "./islands/Header.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
@@ -81,8 +82,10 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/mega-carros/sections/ContactForm.tsx",
               "deco-sites/mega-carros/sections/Footer.tsx",
               "deco-sites/mega-carros/sections/Header.tsx",
+              "deco-sites/mega-carros/sections/HeroContact.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configNuvemShop.tsx",
@@ -109,7 +112,6 @@
               "$live/flags/flag.ts",
               "$live/flags/multivariate.ts",
               "$live/actions/workflows/cancel.ts",
-              "$live/actions/workflows/run.ts",
               "$live/actions/workflows/signal.ts",
               "$live/actions/workflows/start.ts",
               "deco-sites/std/actions/vtex/cart/addItems.ts",
@@ -7368,6 +7370,42 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NvbnRhY3RGb3JtLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "cta": {
+          "type": "string",
+          "title": "Cta"
+        },
+        "terms": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Terms"
+        },
+        "errorMessage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "The error message to be shown when form is not fullfiled as expected",
+          "default": "Preencha corretamente o formulário para continuar",
+          "title": "Error Message"
+        },
+        "successMessage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "The success message to be shown when form is sent",
+          "title": "Success Message"
+        }
+      },
+      "required": [
+        "cta",
+        "terms",
+        "errorMessage",
+        "successMessage"
+      ],
+      "title": "deco-sites/mega-carros/containers/ContactForm.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlYWRlci50c3g=@Link": {
       "type": "object",
       "properties": {
@@ -7913,6 +7951,11 @@
               "type": "string",
               "const": "youtube",
               "default": "youtube"
+            },
+            {
+              "type": "string",
+              "const": "loading",
+              "default": "loading"
             }
           ],
           "type": "string",
@@ -7969,6 +8012,114 @@
       ],
       "title": "deco-sites/mega-carros/containers/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9Db250YWN0LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+              "title": "Title"
+            },
+            "descriptionLines": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "title": "Description Lines"
+            }
+          },
+          "required": [],
+          "title": "Labels"
+        },
+        "flags": {
+          "type": "object",
+          "properties": {
+            "showLabels": {
+              "type": "boolean",
+              "title": "Show Labels"
+            },
+            "labelsOnRight": {
+              "type": "boolean",
+              "title": "Labels On Right"
+            },
+            "backgroundMode": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "video",
+                  "default": "video"
+                },
+                {
+                  "type": "string",
+                  "const": "image",
+                  "default": "image"
+                }
+              ],
+              "type": "string",
+              "title": "Background Mode"
+            }
+          },
+          "required": [
+            "showLabels",
+            "labelsOnRight",
+            "backgroundMode"
+          ],
+          "title": "Flags"
+        },
+        "background": {
+          "type": "object",
+          "properties": {
+            "youtubeLink": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Youtube Link"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                  "title": "Mobile"
+                },
+                "desktop": {
+                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                  "title": "Desktop"
+                }
+              },
+              "required": [],
+              "title": "Image"
+            }
+          },
+          "required": [
+            "image"
+          ],
+          "title": "Background"
+        },
+        "formSlot": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
+          "title": "Form Slot"
+        }
+      },
+      "required": [
+        "labels",
+        "flags",
+        "background",
+        "formSlot"
+      ],
+      "title": "deco-sites/mega-carros/containers/HeroContact.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
       "properties": {
@@ -7982,6 +8133,18 @@
           },
           "description": "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation .",
           "title": "Tracking Ids"
+        },
+        "googleAnalyticsIds": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": "GA Measurement Ids",
+          "label": "measurement id",
+          "description": "the google analytics property measurement id. For more info: https://support.google.com/analytics/answer/9539598"
         },
         "src": {
           "type": [
@@ -8061,11 +8224,6 @@
         "defaultLocale"
       ],
       "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
       "anyOf": [
@@ -8188,6 +8346,11 @@
           ],
           "title": "Meta tag description override"
         },
+        "favicon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 16 x 16 px",
+          "title": "Favicon"
+        },
         "page": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
           "title": "Page"
@@ -8241,6 +8404,11 @@
             "null"
           ],
           "title": "Metatag description override"
+        },
+        "favicon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 16 x 16 px",
+          "title": "Favicon"
         }
       },
       "required": [
@@ -8582,48 +8750,6 @@
         "executionId"
       ],
       "title": "deco-cx/live/actions/workflows/cancel.ts@Props"
-    },
-    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@507352d4562990dd46b22ffc3dafea4f&Metadata": {
-      "allOf": [
-        {
-          "type": "object",
-          "properties": {
-            "workflow": {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
-              "title": "Workflow"
-            }
-          },
-          "required": [
-            "workflow"
-          ]
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata"
-        }
-      ],
-      "title": "507352d4562990dd46b22ffc3dafea4f&Metadata"
-    },
-    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+507352d4562990dd46b22ffc3dafea4f&Metadata": {
-      "type": "object",
-      "properties": {
-        "results": {
-          "title": "Results"
-        },
-        "executionId": {
-          "type": "string",
-          "title": "Execution Id"
-        },
-        "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@507352d4562990dd46b22ffc3dafea4f&Metadata",
-          "title": "Metadata"
-        }
-      },
-      "required": [
-        "results",
-        "executionId",
-        "metadata"
-      ],
-      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+507352d4562990dd46b22ffc3dafea4f&Metadata"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
@@ -10282,6 +10408,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0NvbnRhY3RGb3JtLnRzeA==": {
+      "title": "./islands/ContactForm.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NvbnRhY3RGb3JtLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ContactForm.tsx"
+          ],
+          "default": "./islands/ContactForm.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlci50c3g=": {
       "title": "./islands/Header.tsx",
       "type": "object",
@@ -10591,6 +10738,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Db250YWN0Rm9ybS50c3g=": {
+      "title": "deco-sites/mega-carros/sections/ContactForm.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NvbnRhY3RGb3JtLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/ContactForm.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/ContactForm.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Gb290ZXIudHN4": {
       "title": "deco-sites/mega-carros/sections/Footer.tsx",
       "type": "object",
@@ -10630,6 +10798,27 @@
             "deco-sites/mega-carros/sections/Header.tsx"
           ],
           "default": "deco-sites/mega-carros/sections/Header.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQ29udGFjdC50c3g=": {
+      "title": "deco-sites/mega-carros/sections/HeroContact.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9Db250YWN0LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/HeroContact.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/HeroContact.tsx"
         }
       }
     },
@@ -11176,28 +11365,6 @@
             "$live/actions/workflows/cancel.ts"
           ],
           "default": "$live/actions/workflows/cancel.ts"
-        }
-      }
-    },
-    "JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvcnVuLnRz": {
-      "title": "$live/actions/workflows/run.ts",
-      "description": "Proceed the workflow execution based on the current state of the workflow.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+507352d4562990dd46b22ffc3dafea4f&Metadata"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "$live/actions/workflows/run.ts"
-          ],
-          "default": "$live/actions/workflows/run.ts"
         }
       }
     },
@@ -11781,6 +11948,9 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NvbnRhY3RGb3JtLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci50c3g="
         }
       ]
@@ -11850,10 +12020,16 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Db250YWN0Rm9ybS50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Gb290ZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZWFkZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQ29udGFjdC50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
@@ -11956,9 +12132,6 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvY2FuY2VsLnRz"
-        },
-        {
-          "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvcnVuLnRz"
         },
         {
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc2lnbmFsLnRz"

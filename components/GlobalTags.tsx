@@ -73,6 +73,18 @@ function GlobalTags() {
             background: #000000;
             color: #FFFFFF;
           }
+
+          @media (min-aspect-ratio: 16/9) {
+            .RESPONSIVE_IFRAME {
+              height: 56.25vw;
+            }
+          }
+
+          @media (max-aspect-ratio: 16/9) {
+            .RESPONSIVE_IFRAME {
+              width: 177.78vh;
+            }
+          }
       `,
         }}
       />
