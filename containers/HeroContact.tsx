@@ -1,13 +1,9 @@
 import { Section } from "$live/blocks/section.ts";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
-import YoutubeIframe from "mc/components/YoutubeIframe.tsx";
+import HeroBackground from "mc/components/HeroBackground.tsx";
 import { useLivePageContext } from "$live/pages/LivePage.tsx";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-
-import type {
-  HTML,
-  Image as LiveImage,
-} from "deco-sites/std/components/types.ts";
+import type { HTML } from "deco-sites/std/components/types.ts";
+import type { Props as BackgroundProps } from "mc/components/HeroBackground.tsx";
 
 export interface Props {
   labels: {
@@ -19,68 +15,9 @@ export interface Props {
     showLabels: boolean;
     /** @default false */
     labelsOnRight: boolean;
-    /** @default image */
-    backgroundMode: "video" | "image";
   };
-  background: {
-    youtubeLink?: string;
-    image: {
-      mobile?: LiveImage;
-      desktop?: LiveImage;
-    };
-  };
+  background: BackgroundProps;
   formSlot: Section;
-}
-
-function HeroBackground(props: Props) {
-  const { background, flags } = props;
-  const lcp = false;
-
-  if (flags.backgroundMode === "image") {
-    return (
-      <>
-        <div class="absolute z-[1] h-full w-full">
-          <Picture preload={lcp}>
-            <Source
-              width={375}
-              media="(max-width: 767px)"
-              src={background.image.mobile!}
-              fetchPriority={lcp ? "high" : "auto"}
-            />
-            <Source
-              width={1366}
-              media="(min-width: 768px)"
-              fetchPriority={lcp ? "high" : "auto"}
-              src={background.image.desktop!}
-            />
-            <img
-              alt="Formulário de Contato"
-              src={background.image.mobile!}
-              loading={lcp ? "eager" : "lazy"}
-              class="object-cover w-full h-full"
-              style={{ filter: "grayscale(80%)" }}
-            />
-          </Picture>
-        </div>
-
-        <div class="absolute w-full h-full bg-black bg-opacity-75 z-[2]" />
-      </>
-    );
-  }
-
-  if (background.youtubeLink) {
-    return (
-      <>
-        <div class="absolute z-[1] h-full w-full">
-          <YoutubeIframe url={background.youtubeLink} />
-        </div>
-
-        <div class="absolute w-full h-full bg-black bg-opacity-75 z-[2]" />
-      </>
-    );
-  }
-
-  return null;
 }
 
 function HeroContent(props: Props) {
@@ -121,7 +58,7 @@ function HeroContent(props: Props) {
 export default function ContactForm(props: Props) {
   return (
     <div class="relative">
-      <HeroBackground {...props} />
+      <HeroBackground {...props.background} />
       <HeroContent {...props} />
     </div>
   );
