@@ -18,7 +18,8 @@ export type AvailableIcons =
   | "pelicula-seguranca"
   | "instagram"
   | "facebook"
-  | "youtube";
+  | "youtube"
+  | "loading";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

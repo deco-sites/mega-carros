@@ -1,3 +1,4 @@
+import Icon from "mc/components/Icon.tsx";
 import { ComponentChildren } from "preact";
 
 type AvailableComponents = "a" | "div";
@@ -88,19 +89,22 @@ export function generateColorClassesByType(props: {
 }
 
 export function ButtonBase(props: {
-  as: AvailableComponents;
-  action?: string | (() => void);
   class: string;
+  loading: boolean;
   size: AvailableSizes;
+  as: AvailableComponents;
   children: ComponentChildren;
+  action?: string | (() => void);
 }) {
-  const { as, action, size, children, class: otherClasses } = props;
+  const { as, action, size, children, loading, class: otherClasses } = props;
 
   const smallClasses = "h-[32px] py-[6px] px-[12px] text-sm";
   const regularClasses = "h-[48px] py-[12px] px-[24px] text-base";
   const sizeClasses = size === "regular" ? regularClasses : smallClasses;
   const textClasses = `font-medium  whitespace-nowrap`;
-  const btnClasses = `rounded-[8px] flex items-center w-min`;
+
+  const btnClasses =
+    `rounded-[8px] flex items-center justify-center w-full gap-2 relative`;
 
   if (as === "a") {
     return (
@@ -119,6 +123,14 @@ export function ButtonBase(props: {
       class={`${sizeClasses} ${otherClasses} ${textClasses} ${btnClasses}`}
     >
       {children}
+
+      {loading && (
+        <Icon
+          id="loading"
+          class="animate-spin"
+          size={size === "regular" ? 24 : 16}
+        />
+      )}
     </div>
   );
 }
@@ -138,6 +150,7 @@ export function DisabledButton(props: {
     <ButtonBase
       as="div"
       size={size}
+      loading={false}
       action={undefined}
       class={`${color} ${bgColor} cursor-not-allowed`}
     >
@@ -147,14 +160,15 @@ export function DisabledButton(props: {
 }
 
 export function ActiveButton(props: {
-  as: AvailableComponents;
-  action?: string | (() => void);
   def: ModeDefs;
+  loading: boolean;
   type: AvailableTypes;
   size: AvailableSizes;
+  as: AvailableComponents;
   children: ComponentChildren;
+  action?: string | (() => void);
 }) {
-  const { def, type, size, as, action } = props;
+  const { def, type, size, as, action, loading } = props;
   const classes = generateColorClassesByType({ def, type });
 
   return (
@@ -162,6 +176,7 @@ export function ActiveButton(props: {
       as={as}
       size={size}
       action={action}
+      loading={loading}
       class={`cursor-pointer ${classes}`}
     >
       {props.children}
@@ -170,13 +185,14 @@ export function ActiveButton(props: {
 }
 
 export default function Button(props: {
-  as?: AvailableComponents;
-  action?: string | (() => void);
+  loading?: boolean;
+  disabled?: boolean;
   mode?: AvailableModes;
   type?: AvailableTypes;
   size?: AvailableSizes;
+  as?: AvailableComponents;
   children: ComponentChildren;
-  disabled?: boolean;
+  action?: string | (() => void);
 }) {
   const {
     action,
@@ -184,6 +200,7 @@ export default function Button(props: {
     mode = "primary",
     type = "regular",
     size = "regular",
+    loading = false,
   } = props;
 
   const ButtonComponent = props.disabled ? DisabledButton : ActiveButton;
@@ -195,6 +212,7 @@ export default function Button(props: {
       size={size}
       action={action}
       def={DEFS[mode]}
+      loading={loading}
     >
       {props.children}
     </ButtonComponent>
