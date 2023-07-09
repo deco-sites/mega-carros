@@ -48,14 +48,16 @@ function HeroContent(props: Props) {
         </div>
       )}
 
-      <div class={`w-full lg:w-[400px] ${formFlagClass}`}>
+      <div
+        class={`w-full lg:w-[400px] rounded-2xl overflow-hidden ${formFlagClass}`}
+      >
         {renderSection(formSlot, 0)}
       </div>
     </LimitedDiv>
   );
 }
 
-export default function ContactForm(props: Props) {
+export default function HeroContact(props: Props) {
   return (
     <div class="relative">
       <HeroBackground {...props.background} />

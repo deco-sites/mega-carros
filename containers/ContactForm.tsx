@@ -72,7 +72,7 @@ export default function ContactForm(props: Props) {
   };
 
   return (
-    <div class="relative flex flex-col gap-6 w-full lg:w-[400px] bg-gray-800 bg-opacity-80 p-6 rounded-2xl">
+    <div class="relative flex flex-col gap-6 w-full bg-gray-800 bg-opacity-80 p-6">
       <div class={`flex flex-col gap-6 ${isFormSent ? "invisible" : ""}`}>
         <BasicInput
           required
