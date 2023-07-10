@@ -48,6 +48,7 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
+              "deco-sites/mega-carros/loaders/allCars.ts",
               "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/mega-carros/loaders/car.ts",
               "deco-sites/mega-carros/loaders/cars.ts",
@@ -3945,59 +3946,6 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "image": {
-          "type": "string",
-          "title": "Image"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "label",
-        "image",
-        "href"
-      ],
-      "title": "Brand"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand[]": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand"
-          },
-          "title": "deco-sites/mega-carros/types/types.ts@Brand[]"
-        },
-        {
-          "title": "deco-sites/mega-carros/loaders/brands.ts",
-          "type": "object",
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/mega-carros/loaders/brands.ts"
-              ],
-              "default": "deco-sites/mega-carros/loaders/brands.ts"
-            }
-          }
-        }
-      ]
-    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car": {
       "anyOf": [
         {
@@ -4052,7 +4000,7 @@
             "pictures",
             "slug"
           ],
-          "title": "deco-sites/mega-carros/types/types.ts@Car"
+          "title": "Car"
         },
         {
           "title": "deco-sites/mega-carros/loaders/car.ts",
@@ -4085,6 +4033,22 @@
           "title": "deco-sites/mega-carros/types/types.ts@Car[]"
         },
         {
+          "title": "deco-sites/mega-carros/loaders/allCars.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/allCars.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/allCars.ts"
+            }
+          }
+        },
+        {
           "title": "deco-sites/mega-carros/loaders/cars.ts",
           "type": "object",
           "required": [
@@ -4097,6 +4061,59 @@
                 "deco-sites/mega-carros/loaders/cars.ts"
               ],
               "default": "deco-sites/mega-carros/loaders/cars.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "image": {
+          "type": "string",
+          "title": "Image"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "image",
+        "href"
+      ],
+      "title": "Brand"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand"
+          },
+          "title": "deco-sites/mega-carros/types/types.ts@Brand[]"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/brands.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/brands.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/brands.ts"
             }
           }
         }
@@ -10622,6 +10639,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2FsbENhcnMudHM=": {
+      "title": "deco-sites/mega-carros/loaders/allCars.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/allCars.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/allCars.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kcy50cw==": {
       "title": "deco-sites/mega-carros/loaders/brands.ts",
       "type": "object",
@@ -12693,6 +12726,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2FsbENhcnMudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kcy50cw=="

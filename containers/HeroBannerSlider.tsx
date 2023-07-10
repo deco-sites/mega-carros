@@ -26,7 +26,7 @@ export default function HeroBannerSlider(props: Props) {
         {props.banners.map(Slide)}
       </Slider>
 
-      <SliderControllerJS rootId={id} interval={8 * 1e3} />
+      <SliderControllerJS rootId={id} interval={30 * 1e3} />
     </div>
   );
 }

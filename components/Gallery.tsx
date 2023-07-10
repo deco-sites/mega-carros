@@ -91,7 +91,7 @@ export default function Gallery(props: Props) {
         <div class="w-[calc(100%+48px)] lg:w-[calc(100%+96px)] -mx-6 lg:-mx-12">
           <div id={id} class="w-full">
             <Slider
-              snap="scroll-snap-center flex flex-1"
+              snap="scroll-snap-center flex"
               class="scrollbar-none gap-6"
             >
               {props.bullets.map(renderBulletProxy)}

@@ -7,6 +7,7 @@ import * as $$$0 from "./loaders/cars.ts";
 import * as $$$1 from "./loaders/services.ts";
 import * as $$$2 from "./loaders/car.ts";
 import * as $$$3 from "./loaders/brands.ts";
+import * as $$$4 from "./loaders/allCars.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/ContactForm.tsx";
@@ -153,6 +154,7 @@ const manifest = {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
+    "deco-sites/mega-carros/loaders/allCars.ts": $$$4,
     "deco-sites/mega-carros/loaders/brands.ts": $$$3,
     "deco-sites/mega-carros/loaders/car.ts": $$$2,
     "deco-sites/mega-carros/loaders/cars.ts": $$$0,
