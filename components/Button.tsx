@@ -103,7 +103,7 @@ export function ButtonBase(props: {
   const textClasses = `font-medium  whitespace-nowrap`;
 
   const btnClasses =
-    `rounded-2xl flex items-center justify-center w-full gap-2 relative`;
+    `rounded-[8px] flex items-center justify-center w-full gap-2 relative`;
 
   if (as === "a") {
     return (

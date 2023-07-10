@@ -45,7 +45,7 @@ export default function CommonSection(props: Props) {
       class="flex flex-col justify-center items-center"
     >
       <div class={getLabelsClasses()}>
-        <h3 class="w-min text-2xl whitespace-nowrap">{labels?.title}</h3>
+        <h3 class="w-min text-3xl whitespace-nowrap">{labels?.title}</h3>
         <h4 class="w-min text-xl whitespace-nowrap">{labels?.subtitle}</h4>
       </div>
 

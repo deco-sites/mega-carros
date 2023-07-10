@@ -72,7 +72,7 @@ export default function CarList(props: Props) {
     <CommonSection
       labels={container.labels}
       action={container.action}
-      baseClass="py-12 lg:py-24 bg-gray-900"
+      baseClass="py-12 lg:py-24 bg-black"
     >
       <CardGrid cols={grid.cols} class="py-12 scrollbar-none">
         {cars.map(mapCarsProxy)}
