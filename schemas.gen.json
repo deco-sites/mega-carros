@@ -50,6 +50,7 @@
               "$live/loaders/workflows/get.ts",
               "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/mega-carros/loaders/car.ts",
+              "deco-sites/mega-carros/loaders/cars.ts",
               "deco-sites/mega-carros/loaders/services.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
@@ -85,6 +86,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/mega-carros/sections/CarList.tsx",
               "deco-sites/mega-carros/sections/ContactForm.tsx",
               "deco-sites/mega-carros/sections/Footer.tsx",
               "deco-sites/mega-carros/sections/Header.tsx",
@@ -4008,6 +4010,10 @@
               "type": "string",
               "title": "Brand"
             },
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
             "price": {
               "type": "number",
               "title": "Price"
@@ -4015,13 +4021,32 @@
             "priceFrom": {
               "type": "number",
               "title": "Price From"
+            },
+            "cover": {
+              "type": "string",
+              "title": "Cover"
+            },
+            "pictures": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "title": "Pictures"
+            },
+            "slug": {
+              "type": "string",
+              "title": "Slug"
             }
           },
           "required": [
             "name",
             "brand",
+            "description",
             "price",
-            "priceFrom"
+            "priceFrom",
+            "cover",
+            "pictures",
+            "slug"
           ],
           "title": "deco-sites/mega-carros/types/types.ts@Car"
         },
@@ -4043,6 +4068,36 @@
         }
       ]
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car"
+          },
+          "title": "deco-sites/mega-carros/types/types.ts@Car[]"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/cars.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/cars.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/cars.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service": {
       "type": "object",
       "properties": {
@@ -4053,11 +4108,16 @@
         "icon": {
           "type": "string",
           "title": "Icon"
+        },
+        "slug": {
+          "type": "string",
+          "title": "Slug"
         }
       },
       "required": [
         "name",
-        "icon"
+        "icon",
+        "slug"
       ],
       "title": "Service"
     },
@@ -7942,6 +8002,189 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center",
+              "default": "center"
+            },
+            {
+              "type": "string",
+              "const": "left",
+              "default": "left"
+            },
+            {
+              "type": "string",
+              "const": "right",
+              "default": "right"
+            }
+          ],
+          "type": "string",
+          "title": "Align"
+        }
+      },
+      "required": [],
+      "title": "LabelProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "regular",
+              "default": "regular"
+            },
+            {
+              "type": "string",
+              "const": "outline",
+              "default": "outline"
+            },
+            {
+              "type": "string",
+              "const": "ghost",
+              "default": "ghost"
+            }
+          ],
+          "type": "string",
+          "title": "Type"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "primary",
+              "default": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary",
+              "default": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary",
+              "default": "tertiary"
+            }
+          ],
+          "type": "string",
+          "title": "Mode"
+        }
+      },
+      "required": [],
+      "title": "ActionProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@omitYmFzZUNsYXNzLGNoaWxkcmVuProps": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps",
+          "title": "Labels"
+        },
+        "action": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps",
+          "title": "Action"
+        }
+      },
+      "required": [],
+      "title": "omitYmFzZUNsYXNzLGNoaWxkcmVuProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NhcmRHcmlkLnRzeA==@omitY2hpbGRyZW4sY2xhc3M=Props": {
+      "type": "object",
+      "properties": {
+        "cols": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Cols"
+        }
+      },
+      "required": [],
+      "title": "omitY2hpbGRyZW4sY2xhc3M=Props"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Nhckxpc3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "container": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@omitYmFzZUNsYXNzLGNoaWxkcmVuProps",
+          "title": "Container"
+        },
+        "grid": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NhcmRHcmlkLnRzeA==@omitY2hpbGRyZW4sY2xhc3M=Props",
+          "title": "Grid"
+        },
+        "cars": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]",
+          "title": "Cars"
+        },
+        "cardConfig": {
+          "type": "object",
+          "properties": {
+            "cta": {
+              "type": "string",
+              "title": "Cta"
+            },
+            "priceHelper": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Price Helper"
+            },
+            "showDescription": {
+              "type": "boolean",
+              "title": "Show Description"
+            }
+          },
+          "required": [
+            "cta",
+            "showDescription"
+          ],
+          "title": "Card Config"
+        }
+      },
+      "required": [
+        "container",
+        "grid",
+        "cars",
+        "cardConfig"
+      ],
+      "title": "deco-sites/mega-carros/containers/CarList.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link": {
       "type": "object",
       "properties": {
@@ -8381,140 +8624,6 @@
       ],
       "title": "deco-sites/mega-carros/containers/HeroContact.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "subtitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subtitle"
-        },
-        "align": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "center",
-              "default": "center"
-            },
-            {
-              "type": "string",
-              "const": "left",
-              "default": "left"
-            },
-            {
-              "type": "string",
-              "const": "right",
-              "default": "right"
-            }
-          ],
-          "type": "string",
-          "title": "Align"
-        }
-      },
-      "required": [],
-      "title": "LabelProps"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Label"
-        },
-        "href": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Href"
-        },
-        "type": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "regular",
-              "default": "regular"
-            },
-            {
-              "type": "string",
-              "const": "outline",
-              "default": "outline"
-            },
-            {
-              "type": "string",
-              "const": "ghost",
-              "default": "ghost"
-            }
-          ],
-          "type": "string",
-          "title": "Type"
-        },
-        "mode": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "primary",
-              "default": "primary"
-            },
-            {
-              "type": "string",
-              "const": "secondary",
-              "default": "secondary"
-            },
-            {
-              "type": "string",
-              "const": "tertiary",
-              "default": "tertiary"
-            }
-          ],
-          "type": "string",
-          "title": "Mode"
-        }
-      },
-      "required": [],
-      "title": "ActionProps"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@omitYmFzZUNsYXNzLGNoaWxkcmVuProps": {
-      "type": "object",
-      "properties": {
-        "labels": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps",
-          "title": "Labels"
-        },
-        "action": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps",
-          "title": "Action"
-        }
-      },
-      "required": [],
-      "title": "omitYmFzZUNsYXNzLGNoaWxkcmVuProps"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NhcmRHcmlkLnRzeA==@omitY2hpbGRyZW4sY2xhc3M=Props": {
-      "type": "object",
-      "properties": {
-        "cols": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Cols"
-        }
-      },
-      "required": [],
-      "title": "omitY2hpbGRyZW4sY2xhc3M=Props"
-    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@omitY2hpbGRyZW4=Props": {
       "type": "object",
       "properties": {
@@ -8529,12 +8638,17 @@
         "services": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service[]",
           "title": "Services"
+        },
+        "cardCta": {
+          "type": "string",
+          "title": "Card Cta"
         }
       },
       "required": [
         "container",
         "grid",
-        "services"
+        "services",
+        "cardCta"
       ],
       "title": "deco-sites/mega-carros/containers/Services.tsx@omitY2hpbGRyZW4=Props"
     },
@@ -10486,6 +10600,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NhcnMudHM=": {
+      "title": "deco-sites/mega-carros/loaders/cars.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/cars.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/cars.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VzLnRz": {
       "title": "deco-sites/mega-carros/loaders/services.ts",
       "type": "object",
@@ -11201,6 +11331,27 @@
             "$live/sections/UseSlot.tsx"
           ],
           "default": "$live/sections/UseSlot.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9DYXJMaXN0LnRzeA==": {
+      "title": "deco-sites/mega-carros/sections/CarList.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Nhckxpc3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/CarList.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/CarList.tsx"
         }
       }
     },
@@ -12417,6 +12568,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Nhci50cw=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NhcnMudHM="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VzLnRz"
         },
         {
@@ -12556,6 +12710,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9DYXJMaXN0LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9Db250YWN0Rm9ybS50c3g="

@@ -10,46 +10,52 @@ export interface Props {
   container: Omit<CommonSectionProps, "children" | "baseClass">;
   grid: Omit<CardGridProps, "children" | "class">;
   services: LoaderReturnType<Service[]>;
+  cardCta: string;
 }
 
-const Item = (service: Service, index: number) => {
+const Item = (cta: string, service: Service, index: number) => {
   return (
     <div
       key={`${service.name}-${index}`}
-      class="bg-black p-6 rounded-2xl flex flex-1 w-[180px] flex-col justify-center items-center"
+      class="bg-black p-6 rounded-2xl flex flex-1 w-[180px]"
     >
-      <img
-        height={36}
-        class="h-[36px]"
-        alt={service.name}
-        src={service.icon}
-      />
+      <a
+        href={service.slug}
+        class="flex flex-1 flex-col justify-center items-center"
+      >
+        <img
+          height={36}
+          class="h-[36px]"
+          alt={service.name}
+          src={service.icon}
+        />
 
-      <span class="text-base font-medium mt-2 mb-auto text-center">
-        {service.name}
-      </span>
+        <span class="text-base font-medium mt-2 mb-auto text-center">
+          {service.name}
+        </span>
 
-      <div class="w-min mt-6">
-        <Button mode="secondary" size="small">
-          Ver mais
-        </Button>
-      </div>
+        <div class="w-min mt-6">
+          <Button mode="secondary" size="small">
+            {cta}
+          </Button>
+        </div>
+      </a>
     </div>
   );
 };
 
 export default function Services(props: Props) {
-  const { container, grid, services } = props;
-  const { labels, action } = container;
+  const { container, grid, services, cardCta } = props;
+  const mapProxy = (service: Service, i: number) => Item(cardCta, service, i);
 
   return (
     <CommonSection
-      labels={labels}
-      action={action}
+      labels={container.labels}
+      action={container.action}
       baseClass="py-12 lg:py-24 bg-gray-900"
     >
       <CardGrid cols={grid.cols} class="py-12 scrollbar-none">
-        {services.map(Item)}
+        {services.map(mapProxy)}
       </CardGrid>
     </CommonSection>
   );
