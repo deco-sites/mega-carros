@@ -9,8 +9,8 @@ export interface Props {
   labels: {
     title: string;
     description: string;
-    priceFrom: string;
-    price: string;
+    priceFrom?: string;
+    price?: string;
   };
   flags: {
     labelsPosition: "top-left" | "top-right" | "bottom-left" | "bottom-right";
@@ -18,6 +18,68 @@ export interface Props {
   helper?: ComponentChildren;
   background: BackgroundProps;
   formSlot: Section;
+}
+
+function Badge(props: Props) {
+  const { labels, flags } = props;
+  const { labelsPosition } = flags;
+
+  const hasPriceFrom = labels.priceFrom && labels.priceFrom !== "";
+  const hasPrice = labels.price && labels.price !== "";
+
+  const getLabelClasses = () => {
+    const size = "flex flex-col p-6 h-[min-content] w-full lg:w-[250px]";
+    const details = "bg-gray-600 bg-opacity-80 rounded-t-2xl";
+
+    switch (labelsPosition) {
+      case "top-left":
+        return `${size} ${details} lg:rounded-tr-2xl lg:rounded-tl-none lg:rounded-br-2xl`;
+      case "bottom-left":
+        return `${size} ${details} lg:rounded-tr-2xl lg:rounded-tl-none lg:rounded-br-2xl`;
+      case "top-right":
+        return `${size} ${details} lg:rounded-tl-2xl lg:rounded-tr-none lg:rounded-bl-2xl`;
+      case "bottom-right":
+        return `${size} ${details} lg:rounded-tl-2xl lg:rounded-tr-none lg:rounded-bl-2xl`;
+    }
+  };
+
+  if (!hasPriceFrom && !hasPrice) {
+    return (
+      <div class={getLabelClasses()}>
+        <span class="flex items-center font-extrabold text-2xl">
+          {labels.title}
+        </span>
+
+        <span class="flex items-start font-medium overflow-hidden text-lg">
+          {labels.description}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div class={getLabelClasses()}>
+      <span class="flex items-center font-medium text-2xl truncate">
+        {labels.title}
+      </span>
+
+      <span class="flex items-start font-extrabold h-[4.2rem] overflow-hidden text-2xl">
+        {labels.description}
+      </span>
+
+      {labels.priceFrom && labels.priceFrom != "" && (
+        <span class="flex items-end text-base line-through text-gray-400 truncate">
+          de R$ {labels.priceFrom}
+        </span>
+      )}
+
+      {labels.price && labels.price !== "" && (
+        <span class="flex items-center font-semibold text-2xl truncate">
+          por <b class="text-yellow-500 ml-2">R$ {labels.price}</b>
+        </span>
+      )}
+    </div>
+  );
 }
 
 function HeroContent(props: Props) {
@@ -36,22 +98,6 @@ function HeroContent(props: Props) {
         return "lg:flex-row-reverse";
       case "bottom-right":
         return "lg:flex-row-reverse lg:items-end";
-    }
-  };
-
-  const getLabelClasses = () => {
-    const base =
-      "flex flex-col p-6 h-[min-content] w-full lg:w-[250px] rounded-t-2xl bg-gray-600 bg-opacity-80";
-
-    switch (labelsPosition) {
-      case "top-left":
-        return `${base} lg:rounded-tr-2xl lg:rounded-tl-none lg:rounded-br-2xl`;
-      case "bottom-left":
-        return `${base} lg:rounded-tr-2xl lg:rounded-tl-none lg:rounded-br-2xl`;
-      case "top-right":
-        return `${base} lg:rounded-tl-2xl lg:rounded-tr-none lg:rounded-bl-2xl`;
-      case "bottom-right":
-        return `${base} lg:rounded-tl-2xl lg:rounded-tr-none lg:rounded-bl-2xl`;
     }
   };
 
@@ -80,23 +126,7 @@ function HeroContent(props: Props) {
           {renderSection(formSlot, 0)}
         </div>
 
-        <div class={getLabelClasses()}>
-          <span class="flex items-center font-medium text-2xl truncate">
-            {labels.title}
-          </span>
-
-          <span class="flex items-start font-extrabold h-[4.2rem] overflow-hidden text-2xl">
-            {labels.description}
-          </span>
-
-          <span class="flex items-end text-base line-through text-gray-400 truncate">
-            de R$ {labels.priceFrom}
-          </span>
-
-          <span class="flex items-center font-semibold text-2xl truncate">
-            por <b class="text-yellow-500 ml-2">R$ {labels.price}</b>
-          </span>
-        </div>
+        <Badge {...props} />
       </div>
 
       {/* helper cps */}

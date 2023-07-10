@@ -38,7 +38,7 @@ function Drawer(props: DrawerProps, ref: Ref<DrawerRef>) {
   return (
     <div
       onClick={close}
-      class="fixed flex justify-end w-full h-full bg-black bg-opacity-30 top-0 left-0"
+      class="fixed flex justify-end w-full h-full bg-black bg-opacity-30 top-0 left-0 z-50"
     >
       <div
         onClick={(e) => e.stopPropagation()}

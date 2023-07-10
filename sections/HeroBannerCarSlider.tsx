@@ -10,7 +10,7 @@ export interface Props {
   banners: Slide[];
 }
 
-export default function HeroBannerSliderSection(props: Props) {
+export default function HeroBannerSliderCarSection(props: Props) {
   const { banners } = props;
 
   const formattedBanners = banners.map((banner) => {

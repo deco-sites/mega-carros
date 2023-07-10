@@ -103,15 +103,6 @@ export default function ContactForm(props: Props) {
         <Button loading={isSending} action={submit}>
           {cta}
         </Button>
-
-        {err.name || err.phone || err.email
-          ? (
-            <span
-              class="text-red-500 text-sm"
-              dangerouslySetInnerHTML={{ __html: errorMessage }}
-            />
-          )
-          : null}
       </div>
 
       {isFormSent && (

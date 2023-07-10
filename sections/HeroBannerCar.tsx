@@ -6,7 +6,7 @@ export interface Props extends Omit<HeroBannerProps, "labels" | "helper"> {
   car: Car;
 }
 
-export default function HeroBannerSection(props: Props) {
+export default function HeroBannerCarSection(props: Props) {
   const { car, ...bannerProps } = props;
 
   const labels = {

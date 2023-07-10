@@ -95,8 +95,9 @@
               "deco-sites/mega-carros/sections/ContactForm.tsx",
               "deco-sites/mega-carros/sections/Footer.tsx",
               "deco-sites/mega-carros/sections/Header.tsx",
-              "deco-sites/mega-carros/sections/HeroBanner.tsx",
-              "deco-sites/mega-carros/sections/HeroBannerSlider.tsx",
+              "deco-sites/mega-carros/sections/HeroBannerCar.tsx",
+              "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx",
+              "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx",
               "deco-sites/mega-carros/sections/HeroContact.tsx",
               "deco-sites/mega-carros/sections/Services.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -8580,7 +8581,7 @@
       ],
       "title": "omitaGVscGVyLGxhYmVscw==Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyLnRzeA==@Props": {
       "type": "object",
       "allOf": [
         {
@@ -8596,9 +8597,9 @@
       "required": [
         "car"
       ],
-      "title": "deco-sites/mega-carros/sections/HeroBanner.tsx@Props"
+      "title": "deco-sites/mega-carros/sections/HeroBannerCar.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Slide": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Slide": {
       "type": "object",
       "allOf": [
         {
@@ -8616,25 +8617,59 @@
       ],
       "title": "Slide"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Slide[]": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Slide[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Slide"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Slide"
       },
       "title": "Slide[]"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Slide[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Slide[]",
           "title": "Banners"
         }
       },
       "required": [
         "banners"
       ],
-      "title": "deco-sites/mega-carros/sections/HeroBannerSlider.tsx@Props"
+      "title": "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9CYW5uZXIudHN4@9028a4959fe618a7517d026e05d79604&omitaGVscGVyLGxhYmVscw==Props": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "labels": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Title"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ],
+              "title": "Labels"
+            }
+          },
+          "required": [
+            "labels"
+          ]
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9CYW5uZXIudHN4@omitaGVscGVyLGxhYmVscw==Props"
+        }
+      ],
+      "title": "deco-sites/mega-carros/containers/HeroBanner.tsx@9028a4959fe618a7517d026e05d79604&omitaGVscGVyLGxhYmVscw==Props"
     },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9Db250YWN0LnRzeA==@Props": {
       "type": "object",
@@ -11584,12 +11619,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyLnRzeA==": {
-      "title": "deco-sites/mega-carros/sections/HeroBanner.tsx",
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyLnRzeA==": {
+      "title": "deco-sites/mega-carros/sections/HeroBannerCar.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyLnRzeA==@Props"
         }
       ],
       "required": [
@@ -11599,18 +11634,18 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mega-carros/sections/HeroBanner.tsx"
+            "deco-sites/mega-carros/sections/HeroBannerCar.tsx"
           ],
-          "default": "deco-sites/mega-carros/sections/HeroBanner.tsx"
+          "default": "deco-sites/mega-carros/sections/HeroBannerCar.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==": {
-      "title": "deco-sites/mega-carros/sections/HeroBannerSlider.tsx",
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==": {
+      "title": "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA==@Props"
         }
       ],
       "required": [
@@ -11620,9 +11655,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mega-carros/sections/HeroBannerSlider.tsx"
+            "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx"
           ],
-          "default": "deco-sites/mega-carros/sections/HeroBannerSlider.tsx"
+          "default": "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyR2VuZXJpYy50c3g=": {
+      "title": "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0hlcm9CYW5uZXIudHN4@9028a4959fe618a7517d026e05d79604&omitaGVscGVyLGxhYmVscw==Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx"
         }
       }
     },
@@ -12905,10 +12961,13 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZWFkZXIudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyLnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyU2xpZGVyLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyQ2FyU2xpZGVyLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQmFubmVyR2VuZXJpYy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQ29udGFjdC50c3g="
