@@ -69,6 +69,7 @@
               "deco-sites/std/loaders/vtex/proxy.ts",
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
+              "./islands/CarGallery.tsx",
               "./islands/CarsGallery.tsx",
               "./islands/ContactForm.tsx",
               "./islands/Header.tsx",
@@ -87,6 +88,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/mega-carros/sections/CarGallery.tsx",
               "deco-sites/mega-carros/sections/CarList.tsx",
               "deco-sites/mega-carros/sections/CarsGallery.tsx",
               "deco-sites/mega-carros/sections/ContactForm.tsx",
@@ -7537,6 +7539,19 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhckdhbGxlcnkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "car": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car",
+          "title": "Car"
+        }
+      },
+      "required": [
+        "car"
+      ],
+      "title": "deco-sites/mega-carros/containers/CarGallery.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
       "type": "string",
       "format": "html",
@@ -11027,6 +11042,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0NhckdhbGxlcnkudHN4": {
+      "title": "./islands/CarGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhckdhbGxlcnkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/CarGallery.tsx"
+          ],
+          "default": "./islands/CarGallery.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0NhcnNHYWxsZXJ5LnRzeA==": {
       "title": "./islands/CarsGallery.tsx",
       "type": "object",
@@ -11386,6 +11422,27 @@
             "$live/sections/UseSlot.tsx"
           ],
           "default": "$live/sections/UseSlot.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9DYXJHYWxsZXJ5LnRzeA==": {
+      "title": "deco-sites/mega-carros/sections/CarGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhckdhbGxlcnkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/CarGallery.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/CarGallery.tsx"
         }
       }
     },
@@ -12713,6 +12770,9 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NhckdhbGxlcnkudHN4"
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0NhcnNHYWxsZXJ5LnRzeA=="
         },
         {
@@ -12789,6 +12849,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9DYXJHYWxsZXJ5LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9DYXJMaXN0LnRzeA=="

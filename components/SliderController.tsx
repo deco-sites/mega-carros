@@ -1,9 +1,8 @@
 import Icon from "mc/components/Icon.tsx";
-import { ComponentChildren, JSX } from "preact";
 
 export default function SliderController() {
   return (
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row w-full justify-between">
       <div
         data-slide="prev"
         aria-label="Slide anterior"

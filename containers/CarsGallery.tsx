@@ -12,12 +12,14 @@ export interface Props {
   };
 }
 
-const Slide = (config: Props["slide"], car: Car) => {
+const Slide = (config: Props["slide"], car: Car, index: number) => {
   return (
     <div class="relative flex w-full h-full">
       <div class="block absolute top-0 left-0 z-0 w-full h-full">
         <img
+          alt={car.name}
           src={car.pictures[0]}
+          loading={index === 0 ? "lazy" : "eager"}
           class="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl"
         />
       </div>
@@ -60,7 +62,8 @@ const Bullet = (car: Car) => {
 
 export default function CarsGallery(props: Props) {
   const { title, cars, slide } = props;
-  const mapSlide = (car: Car) => Slide(slide, car);
+  const mapSlide = (car: Car, index: number) => Slide(slide, car, index);
+
   const slides = cars.map(mapSlide);
   const bullets = cars.map(Bullet);
 

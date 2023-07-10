@@ -10,18 +10,20 @@ import * as $$$3 from "./loaders/brands.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/ContactForm.tsx";
-import * as $$$$$2 from "./islands/CarsGallery.tsx";
-import * as $$$$$3 from "./islands/Header.tsx";
-import * as $$$$$4 from "./islands/SliderJS.tsx";
+import * as $$$$$2 from "./islands/CarGallery.tsx";
+import * as $$$$$3 from "./islands/CarsGallery.tsx";
+import * as $$$$$4 from "./islands/Header.tsx";
+import * as $$$$$5 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/ContactForm.tsx";
-import * as $$$$$$$$1 from "./sections/Services.tsx";
-import * as $$$$$$$$2 from "./sections/Footer.tsx";
-import * as $$$$$$$$3 from "./sections/HeroContact.tsx";
-import * as $$$$$$$$4 from "./sections/CarList.tsx";
-import * as $$$$$$$$5 from "./sections/CarsGallery.tsx";
-import * as $$$$$$$$6 from "./sections/HeroBanner.tsx";
-import * as $$$$$$$$7 from "./sections/Header.tsx";
-import * as $$$$$$$$8 from "./sections/HeroBannerSlider.tsx";
+import * as $$$$$$$$1 from "./sections/CarGallery.tsx";
+import * as $$$$$$$$2 from "./sections/Services.tsx";
+import * as $$$$$$$$3 from "./sections/Footer.tsx";
+import * as $$$$$$$$4 from "./sections/HeroContact.tsx";
+import * as $$$$$$$$5 from "./sections/CarList.tsx";
+import * as $$$$$$$$6 from "./sections/CarsGallery.tsx";
+import * as $$$$$$$$7 from "./sections/HeroBanner.tsx";
+import * as $$$$$$$$8 from "./sections/Header.tsx";
+import * as $$$$$$$$9 from "./sections/HeroBannerSlider.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -192,11 +194,12 @@ const manifest = {
     "./routes/live/workflows/run.ts": $live_workflows,
   },
   "islands": {
-    "./islands/CarsGallery.tsx": $$$$$2,
+    "./islands/CarGallery.tsx": $$$$$2,
+    "./islands/CarsGallery.tsx": $$$$$3,
     "./islands/ContactForm.tsx": $$$$$1,
     "./islands/Drawer.tsx": $$$$$0,
-    "./islands/Header.tsx": $$$$$3,
-    "./islands/SliderJS.tsx": $$$$$4,
+    "./islands/Header.tsx": $$$$$4,
+    "./islands/SliderJS.tsx": $$$$$5,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -204,15 +207,16 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/mega-carros/sections/CarList.tsx": $$$$$$$$4,
-    "deco-sites/mega-carros/sections/CarsGallery.tsx": $$$$$$$$5,
+    "deco-sites/mega-carros/sections/CarGallery.tsx": $$$$$$$$1,
+    "deco-sites/mega-carros/sections/CarList.tsx": $$$$$$$$5,
+    "deco-sites/mega-carros/sections/CarsGallery.tsx": $$$$$$$$6,
     "deco-sites/mega-carros/sections/ContactForm.tsx": $$$$$$$$0,
-    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$2,
-    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$7,
-    "deco-sites/mega-carros/sections/HeroBanner.tsx": $$$$$$$$6,
-    "deco-sites/mega-carros/sections/HeroBannerSlider.tsx": $$$$$$$$8,
-    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$3,
-    "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$1,
+    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$3,
+    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$8,
+    "deco-sites/mega-carros/sections/HeroBanner.tsx": $$$$$$$$7,
+    "deco-sites/mega-carros/sections/HeroBannerSlider.tsx": $$$$$$$$9,
+    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$4,
+    "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$2,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
