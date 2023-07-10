@@ -1,5 +1,5 @@
 import { useRef } from "preact/hooks";
-import { Brand } from "mc/types/Brand.ts";
+import { Brand } from "mc/types/types.ts";
 import { asset } from "$fresh/runtime.ts";
 import Icon from "mc/components/Icon.tsx";
 import Button from "mc/components/Button.tsx";

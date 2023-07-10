@@ -1,4 +1,4 @@
-import { Brand } from "mc/types/Brand.ts";
+import { Brand } from "mc/types/types.ts";
 import { asset } from "$fresh/runtime.ts";
 import { LoaderReturnType } from "$live/types.ts";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";

@@ -1,4 +1,4 @@
-import { Car } from "mc/types/Car.ts";
+import { Car } from "mc/types/types.ts";
 import HeroBannerSlider from "mc/containers/HeroBannerSlider.tsx";
 import type { Props as HeroBannerProps } from "mc/containers/HeroBanner.tsx";
 

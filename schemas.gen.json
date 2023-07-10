@@ -50,6 +50,7 @@
               "$live/loaders/workflows/get.ts",
               "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/mega-carros/loaders/car.ts",
+              "deco-sites/mega-carros/loaders/services.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
@@ -90,6 +91,7 @@
               "deco-sites/mega-carros/sections/HeroBanner.tsx",
               "deco-sites/mega-carros/sections/HeroBannerSlider.tsx",
               "deco-sites/mega-carros/sections/HeroContact.tsx",
+              "deco-sites/mega-carros/sections/Services.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configNuvemShop.tsx",
@@ -3937,7 +3939,7 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand": {
       "type": "object",
       "properties": {
         "label": {
@@ -3960,7 +3962,7 @@
       ],
       "title": "Brand"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand[]": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3968,9 +3970,9 @@
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand"
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand"
           },
-          "title": "deco-sites/mega-carros/types/Brand.ts@Brand[]"
+          "title": "deco-sites/mega-carros/types/types.ts@Brand[]"
         },
         {
           "title": "deco-sites/mega-carros/loaders/brands.ts",
@@ -3990,7 +3992,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9DYXIudHM=@Car": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -4021,7 +4023,7 @@
             "price",
             "priceFrom"
           ],
-          "title": "deco-sites/mega-carros/types/Car.ts@Car"
+          "title": "deco-sites/mega-carros/types/types.ts@Car"
         },
         {
           "title": "deco-sites/mega-carros/loaders/car.ts",
@@ -4036,6 +4038,54 @@
                 "deco-sites/mega-carros/loaders/car.ts"
               ],
               "default": "deco-sites/mega-carros/loaders/car.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "icon": {
+          "type": "string",
+          "title": "Icon"
+        }
+      },
+      "required": [
+        "name",
+        "icon"
+      ],
+      "title": "Service"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service"
+          },
+          "title": "deco-sites/mega-carros/types/types.ts@Service[]"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/services.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/services.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/services.ts"
             }
           }
         }
@@ -7498,7 +7548,7 @@
           "title": "Action"
         },
         "brands": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand[]",
           "title": "Brands"
         }
       },
@@ -8054,7 +8104,7 @@
           "title": "Medias"
         },
         "brands": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9CcmFuZC50cw==@Brand[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand[]",
           "title": "Brands"
         }
       },
@@ -8225,7 +8275,7 @@
       ],
       "properties": {
         "car": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9DYXIudHM=@Car",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car",
           "title": "Car"
         }
       },
@@ -8243,7 +8293,7 @@
       ],
       "properties": {
         "car": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy9DYXIudHM=@Car",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car",
           "title": "Car"
         }
       },
@@ -8330,6 +8380,163 @@
         "formSlot"
       ],
       "title": "deco-sites/mega-carros/containers/HeroContact.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center",
+              "default": "center"
+            },
+            {
+              "type": "string",
+              "const": "left",
+              "default": "left"
+            },
+            {
+              "type": "string",
+              "const": "right",
+              "default": "right"
+            }
+          ],
+          "type": "string",
+          "title": "Align"
+        }
+      },
+      "required": [],
+      "title": "LabelProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "regular",
+              "default": "regular"
+            },
+            {
+              "type": "string",
+              "const": "outline",
+              "default": "outline"
+            },
+            {
+              "type": "string",
+              "const": "ghost",
+              "default": "ghost"
+            }
+          ],
+          "type": "string",
+          "title": "Type"
+        },
+        "mode": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "primary",
+              "default": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary",
+              "default": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary",
+              "default": "tertiary"
+            }
+          ],
+          "type": "string",
+          "title": "Mode"
+        }
+      },
+      "required": [],
+      "title": "ActionProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@omitYmFzZUNsYXNzLGNoaWxkcmVuProps": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@LabelProps",
+          "title": "Labels"
+        },
+        "action": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@ActionProps",
+          "title": "Action"
+        }
+      },
+      "required": [],
+      "title": "omitYmFzZUNsYXNzLGNoaWxkcmVuProps"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NhcmRHcmlkLnRzeA==@omitY2hpbGRyZW4sY2xhc3M=Props": {
+      "type": "object",
+      "properties": {
+        "cols": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Cols"
+        }
+      },
+      "required": [],
+      "title": "omitY2hpbGRyZW4sY2xhc3M=Props"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@omitY2hpbGRyZW4=Props": {
+      "type": "object",
+      "properties": {
+        "container": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NvbW1vblNlY3Rpb24udHN4@omitYmFzZUNsYXNzLGNoaWxkcmVuProps",
+          "title": "Container"
+        },
+        "grid": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb21wb25lbnRzL0NhcmRHcmlkLnRzeA==@omitY2hpbGRyZW4sY2xhc3M=Props",
+          "title": "Grid"
+        },
+        "services": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service[]",
+          "title": "Services"
+        }
+      },
+      "required": [
+        "container",
+        "grid",
+        "services"
+      ],
+      "title": "deco-sites/mega-carros/containers/Services.tsx@omitY2hpbGRyZW4=Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -10279,6 +10486,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VzLnRz": {
+      "title": "deco-sites/mega-carros/loaders/services.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/services.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/services.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz": {
       "title": "NuvemShop - PDP",
       "type": "object",
@@ -11104,6 +11327,27 @@
             "deco-sites/mega-carros/sections/HeroContact.tsx"
           ],
           "default": "deco-sites/mega-carros/sections/HeroContact.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlcy50c3g=": {
+      "title": "deco-sites/mega-carros/sections/Services.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@omitY2hpbGRyZW4=Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/Services.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/Services.tsx"
         }
       }
     },
@@ -12173,6 +12417,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Nhci50cw=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VzLnRz"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz"
         },
         {
@@ -12327,6 +12574,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQ29udGFjdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlcy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="

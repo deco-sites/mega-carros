@@ -1,4 +1,4 @@
-import { Car } from "mc/types/Car.ts";
+import { Car } from "mc/types/types.ts";
 
 export default function loader(): Car {
   return {

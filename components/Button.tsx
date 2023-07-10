@@ -1,11 +1,10 @@
 import Icon from "mc/components/Icon.tsx";
 import { ComponentChildren } from "preact";
 
-type AvailableComponents = "a" | "div";
-type AvailableModes = "primary" | "secondary" | "tertiary";
-type AvailableTypes = "regular" | "outline" | "ghost";
-type AvailableSizes = "regular" | "small";
-
+export type AvailableComponents = "a" | "div";
+export type AvailableModes = "primary" | "secondary" | "tertiary";
+export type AvailableTypes = "regular" | "outline" | "ghost";
+export type AvailableSizes = "regular" | "small";
 interface ButtonStateDef {
   color: string;
   backgroundColor: string;

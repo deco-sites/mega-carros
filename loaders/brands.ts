@@ -1,4 +1,4 @@
-import { Brand } from "mc/types/Brand.ts";
+import { Brand } from "mc/types/types.ts";
 
 export default function loader(): Brand[] {
   return [

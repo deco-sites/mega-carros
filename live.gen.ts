@@ -3,19 +3,21 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
-import * as $$$0 from "./loaders/car.ts";
-import * as $$$1 from "./loaders/brands.ts";
+import * as $$$0 from "./loaders/services.ts";
+import * as $$$1 from "./loaders/car.ts";
+import * as $$$2 from "./loaders/brands.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/ContactForm.tsx";
 import * as $$$$$2 from "./islands/Header.tsx";
 import * as $$$$$3 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/ContactForm.tsx";
-import * as $$$$$$$$1 from "./sections/Footer.tsx";
-import * as $$$$$$$$2 from "./sections/HeroContact.tsx";
-import * as $$$$$$$$3 from "./sections/HeroBanner.tsx";
-import * as $$$$$$$$4 from "./sections/Header.tsx";
-import * as $$$$$$$$5 from "./sections/HeroBannerSlider.tsx";
+import * as $$$$$$$$1 from "./sections/Services.tsx";
+import * as $$$$$$$$2 from "./sections/Footer.tsx";
+import * as $$$$$$$$3 from "./sections/HeroContact.tsx";
+import * as $$$$$$$$4 from "./sections/HeroBanner.tsx";
+import * as $$$$$$$$5 from "./sections/Header.tsx";
+import * as $$$$$$$$6 from "./sections/HeroBannerSlider.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -145,8 +147,9 @@ const manifest = {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
-    "deco-sites/mega-carros/loaders/brands.ts": $$$1,
-    "deco-sites/mega-carros/loaders/car.ts": $$$0,
+    "deco-sites/mega-carros/loaders/brands.ts": $$$2,
+    "deco-sites/mega-carros/loaders/car.ts": $$$1,
+    "deco-sites/mega-carros/loaders/services.ts": $$$0,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
@@ -196,11 +199,12 @@ const manifest = {
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
     "deco-sites/mega-carros/sections/ContactForm.tsx": $$$$$$$$0,
-    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$1,
-    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$4,
-    "deco-sites/mega-carros/sections/HeroBanner.tsx": $$$$$$$$3,
-    "deco-sites/mega-carros/sections/HeroBannerSlider.tsx": $$$$$$$$5,
-    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$2,
+    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$2,
+    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$5,
+    "deco-sites/mega-carros/sections/HeroBanner.tsx": $$$$$$$$4,
+    "deco-sites/mega-carros/sections/HeroBannerSlider.tsx": $$$$$$$$6,
+    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$3,
+    "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$1,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
