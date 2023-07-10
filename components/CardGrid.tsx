@@ -1,6 +1,6 @@
 import { useId } from "preact/hooks";
-import { Slider } from "mc/components/Slider.tsx";
 import { ComponentChildren } from "preact";
+import { Slider } from "mc/components/Slider.tsx";
 
 export interface Props {
   cols?: number;
