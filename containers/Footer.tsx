@@ -26,7 +26,7 @@ export default function Footer(props: Props) {
   const { links, copyright, policyLinks, brands, medias } = props;
 
   return (
-    <LimitedDiv>
+    <LimitedDiv baseClass="border-t-2 border-yellow-500">
       <div class="px-6 py-12 flex gap-6 flex-col lg:flex-row justify-between">
         <a href="/">
           <img
