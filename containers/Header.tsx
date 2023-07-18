@@ -28,8 +28,8 @@ export default function Header(props: Props) {
       <div class="flex flex-row h-24 items-center p-6">
         <a href="/">
           <img
-            class="h-[29px] w-[120px]"
             alt="Mega Carros PCD"
+            class="h-[29px] w-[120px]"
             src={asset("/logo.png")}
           />
         </a>
@@ -63,8 +63,13 @@ export default function Header(props: Props) {
         <ul class="flex flex-1 flex-row items-center justify-between overflow-y-hidden scrollbar-none scroll-smooth">
           {brands.map((brand) => (
             <li class="flex justify-center items-center opacity-50 hover:opacity-100 transition-opacity">
-              <a href={brand.href} class="h-full px-6 w-max">
-                <img src={brand.image} height={40} alt={brand.label} />
+              <a href={`/${brand.slug}`} class="h-full px-6 w-max">
+                <img
+                  height={40}
+                  alt={brand.name}
+                  src={brand.logo}
+                  class="object-cover h-[40px]"
+                />
               </a>
             </li>
           ))}

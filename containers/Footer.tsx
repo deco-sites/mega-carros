@@ -41,8 +41,8 @@ export default function Footer(props: Props) {
             <li class="uppercase font-bold text-sm mt-[4px]">marcas</li>
             {brands.map((brand) => (
               <li class="uppercase">
-                <a href={brand.href} class="text-sm hover:underline">
-                  {brand.label}
+                <a href={`/${brand.slug}`} class="text-sm hover:underline">
+                  {brand.name}
                 </a>
               </li>
             ))}

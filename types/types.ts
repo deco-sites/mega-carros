@@ -1,7 +1,8 @@
 export interface Brand {
-  label: string;
-  image: string;
-  href: string;
+  name: string;
+  slug: string;
+  logo: string;
+  description: string;
 }
 
 export interface Car {
