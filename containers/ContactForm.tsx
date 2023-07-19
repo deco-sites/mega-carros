@@ -8,19 +8,13 @@ export interface Props {
   terms: HTML;
 
   /**
-   * @description The error message to be shown when form is not fullfiled as expected
-   * @default Preencha corretamente o formulário para continuar
-   */
-  errorMessage: HTML;
-
-  /**
    * @description The success message to be shown when form is sent
    */
   successMessage: HTML;
 }
 
 export default function ContactForm(props: Props) {
-  const { cta, terms, errorMessage, successMessage } = props;
+  const { cta, terms, successMessage } = props;
 
   const [isSending, setIsSending] = useState(false);
   const [isFormSent, setIsFormSent] = useState(false);

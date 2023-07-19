@@ -1,4 +1,4 @@
-import { Service } from "mc/types/types.ts";
+import { Car } from "mc/types/types.ts";
 import type { MCContext } from "mc/accounts/mc.ts";
 import axiod from "https://deno.land/x/axiod@0.26.2/mod.ts";
 
@@ -6,12 +6,12 @@ export default async function loader(
   _props: unknown,
   _req: Request,
   ctx: MCContext,
-): Promise<Service[]> {
+): Promise<Car[]> {
   const { configMC } = ctx;
   const { api, token } = configMC ?? {};
 
-  const url = new URL(`${api}/best-services`);
-  url.searchParams.append("populate[services][populate]", "*");
+  const url = new URL(`${api}/best-cars`);
+  url.searchParams.append("populate[cars][populate]", "*");
 
   const endpoint = url.toString();
   const headers = { Authorization: `Bearer ${token}` };
@@ -19,5 +19,5 @@ export default async function loader(
   const { data } = responseData;
 
   // deno-lint-ignore no-explicit-any
-  return data.attributes.services.data.map((d: any) => d.attributes);
+  return data.attributes.cars.data.map((d: any) => d.attributes);
 }

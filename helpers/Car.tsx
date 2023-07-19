@@ -38,6 +38,6 @@ export function carToHeroBanner(
     },
   };
 
-  const action = `/${car.brand.data.attributes.name}/${car.slug}`;
+  const action = `/${car.brand.data.attributes.slug}/${car.slug}`;
   return { action, labels, flags, background, formSlot };
 }

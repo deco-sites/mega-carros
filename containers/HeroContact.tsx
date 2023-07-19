@@ -30,6 +30,7 @@ function HeroContent(props: Props) {
 
   return (
     <LimitedDiv
+      id="hero-contact-form"
       baseClass="relative z-10"
       class={`p-6 lg:p-12 flex flex-col lg:flex-row gap-12 ${labelFlagClass}`}
     >

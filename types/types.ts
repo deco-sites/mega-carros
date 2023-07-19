@@ -61,8 +61,26 @@ export interface Car {
 
 export interface Service {
   name: string;
-  icon: string;
+  icon: { data: StrapiMedia };
   slug: string;
+  description: string;
+  cta: string;
+  hero_media: { data: StrapiMedia };
+  hero_video: string;
+  hero_config: {
+    grayscale: boolean;
+    use_overlay: boolean;
+    labels_position: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+    mode: "video" | "image";
+  };
+  form_media: { data: StrapiMedia };
+  form_video: string;
+  form_config: {
+    cta: string;
+    title: string;
+    description: string;
+    mode: "video" | "image";
+  };
 }
 
 export interface BrandPage {
@@ -72,4 +90,8 @@ export interface BrandPage {
 
 export interface CarPage {
   car: Car | null;
+}
+
+export interface ServicePage {
+  service: Service | null;
 }

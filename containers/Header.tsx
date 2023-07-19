@@ -51,13 +51,20 @@ export default function Header(props: Props) {
       </div>
 
       <ul class="hidden lg:flex p-6 pt-0 justify-between">
-        {links.map((link) => (
-          <li class="text-white hover:text-yellow-400">
-            <a href={link.href} class="uppercase text-lg font-bold">
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {links.map((link) => {
+          const isActive = url?.pathname === link.href;
+          const activeColor = "text-yellow-400";
+          const inactiveColor = "text-white";
+          const colorClass = isActive ? activeColor : inactiveColor;
+
+          return (
+            <li class={`${colorClass} hover:text-yellow-400`}>
+              <a href={link.href} class="uppercase text-lg font-bold">
+                {link.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
 
       <div class="h-20 border-t-2 border-gray-800 flex">

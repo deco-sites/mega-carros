@@ -13,7 +13,7 @@ export default function LimitedDiv(props: Props) {
   const allInnerClasses = [innerClasses, props.class, props.className];
 
   return (
-    <div class={allRootClasses.join(" ")}>
+    <div id={props.id} class={allRootClasses.join(" ")}>
       <div class={allInnerClasses.join(" ")}>
         {props.children}
       </div>

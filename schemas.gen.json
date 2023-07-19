@@ -50,11 +50,13 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
+              "deco-sites/mega-carros/loaders/bestCars.ts",
+              "deco-sites/mega-carros/loaders/bestOffers.ts",
               "deco-sites/mega-carros/loaders/brandPage.ts",
               "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/mega-carros/loaders/car.ts",
               "deco-sites/mega-carros/loaders/carPage.ts",
-              "deco-sites/mega-carros/loaders/hotCars.ts",
+              "deco-sites/mega-carros/loaders/servicePage.ts",
               "deco-sites/mega-carros/loaders/services.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
@@ -106,6 +108,7 @@
               "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx",
               "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx",
               "deco-sites/mega-carros/sections/HeroContact.tsx",
+              "deco-sites/mega-carros/sections/ServicePage.tsx",
               "deco-sites/mega-carros/sections/Services.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
@@ -4859,6 +4862,52 @@
       ],
       "title": "Car"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car"
+          },
+          "title": "deco-sites/mega-carros/types/types.ts@Car[]"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/bestCars.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/bestCars.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/bestCars.ts"
+            }
+          }
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/bestOffers.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/bestOffers.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/bestOffers.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Brand": {
       "type": "object",
       "properties": {
@@ -5004,41 +5053,6 @@
         "form_config"
       ],
       "title": "Brand"
-    },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car"
-          },
-          "title": "Car[]"
-        },
-        {
-          "title": "deco-sites/mega-carros/loaders/hotCars.ts",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2hvdENhcnMudHM=@Props"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/mega-carros/loaders/hotCars.ts"
-              ],
-              "default": "deco-sites/mega-carros/loaders/hotCars.ts"
-            }
-          }
-        }
-      ]
     },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@BrandPage": {
       "anyOf": [
@@ -5230,27 +5244,6 @@
       ],
       "title": "deco-sites/mega-carros/loaders/carPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2hvdENhcnMudHM=@Props": {
-      "type": "object",
-      "properties": {
-        "sort": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Sort"
-        },
-        "limit": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Limit"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/mega-carros/loaders/hotCars.ts@Props"
-    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service": {
       "type": "object",
       "properties": {
@@ -5259,20 +5252,246 @@
           "title": "Name"
         },
         "icon": {
-          "type": "string",
+          "type": "object",
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@StrapiMedia",
+              "title": "Data"
+            }
+          },
+          "required": [
+            "data"
+          ],
           "title": "Icon"
         },
         "slug": {
           "type": "string",
           "title": "Slug"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "cta": {
+          "type": "string",
+          "title": "Cta"
+        },
+        "hero_media": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@StrapiMedia",
+              "title": "Data"
+            }
+          },
+          "required": [
+            "data"
+          ],
+          "title": "Hero_media"
+        },
+        "hero_video": {
+          "type": "string",
+          "title": "Hero_video"
+        },
+        "hero_config": {
+          "type": "object",
+          "properties": {
+            "grayscale": {
+              "type": "boolean",
+              "title": "Grayscale"
+            },
+            "use_overlay": {
+              "type": "boolean",
+              "title": "Use_overlay"
+            },
+            "labels_position": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "top-left",
+                  "default": "top-left"
+                },
+                {
+                  "type": "string",
+                  "const": "top-right",
+                  "default": "top-right"
+                },
+                {
+                  "type": "string",
+                  "const": "bottom-left",
+                  "default": "bottom-left"
+                },
+                {
+                  "type": "string",
+                  "const": "bottom-right",
+                  "default": "bottom-right"
+                }
+              ],
+              "type": "string",
+              "title": "Labels_position"
+            },
+            "mode": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "video",
+                  "default": "video"
+                },
+                {
+                  "type": "string",
+                  "const": "image",
+                  "default": "image"
+                }
+              ],
+              "type": "string",
+              "title": "Mode"
+            }
+          },
+          "required": [
+            "grayscale",
+            "use_overlay",
+            "labels_position",
+            "mode"
+          ],
+          "title": "Hero_config"
+        },
+        "form_media": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@StrapiMedia",
+              "title": "Data"
+            }
+          },
+          "required": [
+            "data"
+          ],
+          "title": "Form_media"
+        },
+        "form_video": {
+          "type": "string",
+          "title": "Form_video"
+        },
+        "form_config": {
+          "type": "object",
+          "properties": {
+            "cta": {
+              "type": "string",
+              "title": "Cta"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
+            "mode": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "video",
+                  "default": "video"
+                },
+                {
+                  "type": "string",
+                  "const": "image",
+                  "default": "image"
+                }
+              ],
+              "type": "string",
+              "title": "Mode"
+            }
+          },
+          "required": [
+            "cta",
+            "title",
+            "description",
+            "mode"
+          ],
+          "title": "Form_config"
         }
       },
       "required": [
         "name",
         "icon",
-        "slug"
+        "slug",
+        "description",
+        "cta",
+        "hero_media",
+        "hero_video",
+        "hero_config",
+        "form_media",
+        "form_video",
+        "form_config"
       ],
       "title": "Service"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Service|null"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@ServicePage": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "service": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service|null",
+              "title": "Service"
+            }
+          },
+          "required": [
+            "service"
+          ],
+          "title": "deco-sites/mega-carros/types/types.ts@ServicePage"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/servicePage.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/servicePage.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/servicePage.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz@RequestURLParam",
+          "title": "Slug"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "title": "deco-sites/mega-carros/loaders/servicePage.ts@Props"
     },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service[]": {
       "anyOf": [
@@ -8784,6 +9003,43 @@
       ],
       "title": "deco-sites/mega-carros/containers/CarGallery.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhcnNHYWxsZXJ5LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "cars": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]",
+          "title": "Cars"
+        },
+        "slide": {
+          "type": "object",
+          "properties": {
+            "cta": {
+              "type": "string",
+              "title": "Cta"
+            },
+            "priceHelper": {
+              "type": "string",
+              "title": "Price Helper"
+            }
+          },
+          "required": [
+            "cta",
+            "priceHelper"
+          ],
+          "title": "Slide"
+        }
+      },
+      "required": [
+        "title",
+        "cars",
+        "slide"
+      ],
+      "title": "deco-sites/mega-carros/containers/CarsGallery.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
       "type": "string",
       "format": "html",
@@ -8800,12 +9056,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "title": "Terms"
         },
-        "errorMessage": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
-          "description": "The error message to be shown when form is not fullfiled as expected",
-          "default": "Preencha corretamente o formulário para continuar",
-          "title": "Error Message"
-        },
         "successMessage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "description": "The success message to be shown when form is sent",
@@ -8815,7 +9065,6 @@
       "required": [
         "cta",
         "terms",
-        "errorMessage",
         "successMessage"
       ],
       "title": "deco-sites/mega-carros/containers/ContactForm.tsx@Props"
@@ -9552,43 +9801,6 @@
       ],
       "title": "deco-sites/mega-carros/containers/CarPage.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhcnNHYWxsZXJ5LnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "cars": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Car[]",
-          "title": "Cars"
-        },
-        "slide": {
-          "type": "object",
-          "properties": {
-            "cta": {
-              "type": "string",
-              "title": "Cta"
-            },
-            "priceHelper": {
-              "type": "string",
-              "title": "Price Helper"
-            }
-          },
-          "required": [
-            "cta",
-            "priceHelper"
-          ],
-          "title": "Slide"
-        }
-      },
-      "required": [
-        "title",
-        "cars",
-        "slide"
-      ],
-      "title": "deco-sites/mega-carros/containers/CarsGallery.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Zvb3Rlci50c3g=@Link": {
       "type": "object",
       "properties": {
@@ -10074,7 +10286,25 @@
       ],
       "title": "deco-sites/mega-carros/containers/HeroContact.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@omitY2hpbGRyZW4=Props": {
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VQYWdlLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "formSlot": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
+          "title": "Form Slot"
+        },
+        "servicePage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@ServicePage",
+          "title": "Service Page"
+        }
+      },
+      "required": [
+        "formSlot",
+        "servicePage"
+      ],
+      "title": "deco-sites/mega-carros/containers/ServicePage.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "container": {
@@ -10100,7 +10330,7 @@
         "services",
         "cardCta"
       ],
-      "title": "deco-sites/mega-carros/containers/Services.tsx@omitY2hpbGRyZW4=Props"
+      "title": "deco-sites/mega-carros/containers/Services.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -12103,6 +12333,38 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Jlc3RDYXJzLnRz": {
+      "title": "deco-sites/mega-carros/loaders/bestCars.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/bestCars.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/bestCars.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Jlc3RPZmZlcnMudHM=": {
+      "title": "deco-sites/mega-carros/loaders/bestOffers.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/bestOffers.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/bestOffers.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kUGFnZS50cw==": {
       "title": "deco-sites/mega-carros/loaders/brandPage.ts",
       "type": "object",
@@ -12182,12 +12444,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2hvdENhcnMudHM=": {
-      "title": "deco-sites/mega-carros/loaders/hotCars.ts",
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz": {
+      "title": "deco-sites/mega-carros/loaders/servicePage.ts",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2hvdENhcnMudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz@Props"
         }
       ],
       "required": [
@@ -12197,9 +12459,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/mega-carros/loaders/hotCars.ts"
+            "deco-sites/mega-carros/loaders/servicePage.ts"
           ],
-          "default": "deco-sites/mega-carros/loaders/hotCars.ts"
+          "default": "deco-sites/mega-carros/loaders/servicePage.ts"
         }
       }
     },
@@ -12620,6 +12882,11 @@
     "Li9pc2xhbmRzL0NhcnNHYWxsZXJ5LnRzeA==": {
       "title": "./islands/CarsGallery.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0NhcnNHYWxsZXJ5LnRzeA==@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -13252,12 +13519,33 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlUGFnZS50c3g=": {
+      "title": "deco-sites/mega-carros/sections/ServicePage.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VQYWdlLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/sections/ServicePage.tsx"
+          ],
+          "default": "deco-sites/mega-carros/sections/ServicePage.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlcy50c3g=": {
       "title": "deco-sites/mega-carros/sections/Services.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@omitY2hpbGRyZW4=Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VzLnRzeA==@Props"
         }
       ],
       "required": [
@@ -14377,6 +14665,12 @@
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Jlc3RDYXJzLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2Jlc3RPZmZlcnMudHM="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2JyYW5kUGFnZS50cw=="
         },
         {
@@ -14389,7 +14683,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NhclBhZ2UudHM="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2hvdENhcnMudHM="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VzLnRz"
@@ -14579,6 +14873,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9IZXJvQ29udGFjdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlUGFnZS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9zZWN0aW9ucy9TZXJ2aWNlcy50c3g="

@@ -17,7 +17,7 @@ const Item = (cta: string, service: Service, index: number) => {
   return (
     <div
       key={`${service.name}-${index}`}
-      class="bg-black p-6 rounded-2xl flex flex-1 w-[180px]"
+      class="bg-black p-6 rounded-2xl flex flex-col justify-center items-center flex-1 w-[180px]"
     >
       <a
         href={service.slug}
@@ -27,7 +27,7 @@ const Item = (cta: string, service: Service, index: number) => {
           height={36}
           class="h-[36px]"
           alt={service.name}
-          src={service.icon}
+          src={service.icon.data.attributes.url}
         />
 
         <span class="text-base font-medium mt-2 mb-auto text-center">
@@ -35,7 +35,12 @@ const Item = (cta: string, service: Service, index: number) => {
         </span>
 
         <div class="w-min mt-6">
-          <Button mode="secondary" size="small">
+          <Button
+            as="a"
+            size="small"
+            mode="secondary"
+            action={`/servicos/${service.slug}`}
+          >
             {cta}
           </Button>
         </div>

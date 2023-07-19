@@ -69,6 +69,10 @@ function GlobalTags() {
             src: url(${asset("/fonts/barlow-700.ttf")});
           }
 
+          html {
+            scroll-behavior: smooth;
+          }
+
           body {
             background: #000000;
             color: #FFFFFF;
