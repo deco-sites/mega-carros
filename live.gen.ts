@@ -4,18 +4,20 @@
 
 import { DecoManifest } from "$live/types.ts";
 import * as $$0 from "./accounts/mc.ts";
-import * as $$$0 from "./loaders/cars.ts";
-import * as $$$1 from "./loaders/services.ts";
-import * as $$$2 from "./loaders/car.ts";
+import * as $$$0 from "./loaders/services.ts";
+import * as $$$1 from "./loaders/car.ts";
+import * as $$$2 from "./loaders/carPage.ts";
 import * as $$$3 from "./loaders/brands.ts";
-import * as $$$4 from "./loaders/allCars.ts";
+import * as $$$4 from "./loaders/hotCars.ts";
+import * as $$$5 from "./loaders/brandPage.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/ContactForm.tsx";
 import * as $$$$$2 from "./islands/CarGallery.tsx";
-import * as $$$$$3 from "./islands/CarsGallery.tsx";
-import * as $$$$$4 from "./islands/Header.tsx";
-import * as $$$$$5 from "./islands/SliderJS.tsx";
+import * as $$$$$3 from "./islands/DetailGrid.tsx";
+import * as $$$$$4 from "./islands/CarsGallery.tsx";
+import * as $$$$$5 from "./islands/Header.tsx";
+import * as $$$$$6 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/ContactForm.tsx";
 import * as $$$$$$$$1 from "./sections/CarGallery.tsx";
 import * as $$$$$$$$2 from "./sections/HeroBannerGeneric.tsx";
@@ -24,9 +26,11 @@ import * as $$$$$$$$4 from "./sections/Footer.tsx";
 import * as $$$$$$$$5 from "./sections/HeroContact.tsx";
 import * as $$$$$$$$6 from "./sections/CarList.tsx";
 import * as $$$$$$$$7 from "./sections/CarsGallery.tsx";
-import * as $$$$$$$$8 from "./sections/HeroBannerCar.tsx";
-import * as $$$$$$$$9 from "./sections/Header.tsx";
-import * as $$$$$$$$10 from "./sections/HeroBannerCarSlider.tsx";
+import * as $$$$$$$$8 from "./sections/BrandPage.tsx";
+import * as $$$$$$$$9 from "./sections/HeroBannerCar.tsx";
+import * as $$$$$$$$10 from "./sections/CarPage.tsx";
+import * as $$$$$$$$11 from "./sections/Header.tsx";
+import * as $$$$$$$$12 from "./sections/HeroBannerCarSlider.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -100,12 +104,13 @@ import * as i2$23 from "deco-sites/std/functions/vtexProductList.ts";
 import * as i2$24 from "deco-sites/std/functions/vtexProductListingPage.ts";
 import * as i2$25 from "deco-sites/std/functions/vtexSuggestions.ts";
 import * as i2$26 from "deco-sites/std/functions/vtexWishlist.ts";
-import * as i2$$0 from "deco-sites/std/accounts/nuvemShop.ts";
-import * as i2$$1 from "deco-sites/std/accounts/occ.ts";
-import * as i2$$2 from "deco-sites/std/accounts/shopify.ts";
-import * as i2$$3 from "deco-sites/std/accounts/vnda.ts";
-import * as i2$$4 from "deco-sites/std/accounts/vtex.ts";
-import * as i2$$5 from "deco-sites/std/accounts/yourViews.ts";
+import * as i2$$0 from "deco-sites/std/accounts/butterCMS.ts";
+import * as i2$$1 from "deco-sites/std/accounts/nuvemShop.ts";
+import * as i2$$2 from "deco-sites/std/accounts/occ.ts";
+import * as i2$$3 from "deco-sites/std/accounts/shopify.ts";
+import * as i2$$4 from "deco-sites/std/accounts/vnda.ts";
+import * as i2$$5 from "deco-sites/std/accounts/vtex.ts";
+import * as i2$$6 from "deco-sites/std/accounts/yourViews.ts";
 import * as i2$$$3 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts";
 import * as i2$$$4 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts";
 import * as i2$$$5 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts";
@@ -123,6 +128,7 @@ import * as i2$$$16 from "deco-sites/std/loaders/vtex/navbar.ts";
 import * as i2$$$17 from "deco-sites/std/loaders/vtex/proxy.ts";
 import * as i2$$$18 from "deco-sites/std/loaders/vtex/user.ts";
 import * as i2$$$19 from "deco-sites/std/loaders/vtex/wishlist.ts";
+import * as i2$$$20 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
 import * as i2$$$$7 from "deco-sites/std/handlers/vtex/sitemap.ts";
 import * as i2$$$$$5 from "deco-sites/std/sections/Analytics.tsx";
 import * as i2$$$$$6 from "deco-sites/std/sections/configButterCMS.global.tsx";
@@ -156,22 +162,24 @@ import * as i2$$$$$$19 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
 const manifest = {
   "accounts": {
     "deco-sites/mega-carros/accounts/mc.ts": $$0,
-    "deco-sites/std/accounts/nuvemShop.ts": i2$$0,
-    "deco-sites/std/accounts/occ.ts": i2$$1,
-    "deco-sites/std/accounts/shopify.ts": i2$$2,
-    "deco-sites/std/accounts/vnda.ts": i2$$3,
-    "deco-sites/std/accounts/vtex.ts": i2$$4,
-    "deco-sites/std/accounts/yourViews.ts": i2$$5,
+    "deco-sites/std/accounts/butterCMS.ts": i2$$0,
+    "deco-sites/std/accounts/nuvemShop.ts": i2$$1,
+    "deco-sites/std/accounts/occ.ts": i2$$2,
+    "deco-sites/std/accounts/shopify.ts": i2$$3,
+    "deco-sites/std/accounts/vnda.ts": i2$$4,
+    "deco-sites/std/accounts/vtex.ts": i2$$5,
+    "deco-sites/std/accounts/yourViews.ts": i2$$6,
   },
   "loaders": {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
-    "deco-sites/mega-carros/loaders/allCars.ts": $$$4,
+    "deco-sites/mega-carros/loaders/brandPage.ts": $$$5,
     "deco-sites/mega-carros/loaders/brands.ts": $$$3,
-    "deco-sites/mega-carros/loaders/car.ts": $$$2,
-    "deco-sites/mega-carros/loaders/cars.ts": $$$0,
-    "deco-sites/mega-carros/loaders/services.ts": $$$1,
+    "deco-sites/mega-carros/loaders/car.ts": $$$1,
+    "deco-sites/mega-carros/loaders/carPage.ts": $$$2,
+    "deco-sites/mega-carros/loaders/hotCars.ts": $$$4,
+    "deco-sites/mega-carros/loaders/services.ts": $$$0,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
@@ -191,6 +199,7 @@ const manifest = {
     "deco-sites/std/loaders/vtex/proxy.ts": i2$$$17,
     "deco-sites/std/loaders/vtex/user.ts": i2$$$18,
     "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$19,
+    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$20,
   },
   "routes": {
     "./routes/_app.tsx": $$$$0,
@@ -210,11 +219,12 @@ const manifest = {
   },
   "islands": {
     "./islands/CarGallery.tsx": $$$$$2,
-    "./islands/CarsGallery.tsx": $$$$$3,
+    "./islands/CarsGallery.tsx": $$$$$4,
     "./islands/ContactForm.tsx": $$$$$1,
+    "./islands/DetailGrid.tsx": $$$$$3,
     "./islands/Drawer.tsx": $$$$$0,
-    "./islands/Header.tsx": $$$$$4,
-    "./islands/SliderJS.tsx": $$$$$5,
+    "./islands/Header.tsx": $$$$$5,
+    "./islands/SliderJS.tsx": $$$$$6,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -222,14 +232,16 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
+    "deco-sites/mega-carros/sections/BrandPage.tsx": $$$$$$$$8,
     "deco-sites/mega-carros/sections/CarGallery.tsx": $$$$$$$$1,
     "deco-sites/mega-carros/sections/CarList.tsx": $$$$$$$$6,
+    "deco-sites/mega-carros/sections/CarPage.tsx": $$$$$$$$10,
     "deco-sites/mega-carros/sections/CarsGallery.tsx": $$$$$$$$7,
     "deco-sites/mega-carros/sections/ContactForm.tsx": $$$$$$$$0,
     "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$4,
-    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$9,
-    "deco-sites/mega-carros/sections/HeroBannerCar.tsx": $$$$$$$$8,
-    "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx": $$$$$$$$10,
+    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$11,
+    "deco-sites/mega-carros/sections/HeroBannerCar.tsx": $$$$$$$$9,
+    "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx": $$$$$$$$12,
     "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx": $$$$$$$$2,
     "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$5,
     "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$3,

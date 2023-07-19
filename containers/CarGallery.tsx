@@ -31,8 +31,9 @@ const Bullet = (picture: string, index: number) => {
 
 export default function CarGallery(props: Props) {
   const { car } = props;
-  const slides = car.pictures.map(Slide);
-  const bullets = car.pictures.map(Bullet);
+  const images = car.images.data.map((i) => i.attributes.url);
+  const slides = images.map(Slide);
+  const bullets = images.map(Bullet);
 
   return <Gallery slides={slides} bullets={bullets} />;
 }

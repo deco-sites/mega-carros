@@ -1,5 +1,6 @@
 import { Car } from "mc/types/types.ts";
 import Button from "mc/components/Button.tsx";
+import { toMoney } from "mc/helpers/number.tsx";
 import { LoaderReturnType } from "$live/types.ts";
 import CardGrid from "mc/components/CardGrid.tsx";
 import CommonSection from "mc/components/CommonSection.tsx";
@@ -20,27 +21,27 @@ export interface Props {
 const Item = (config: Props["cardConfig"], car: Car, index: number) => {
   return (
     <div
-      key={`${car.name}-${index}`}
+      key={`${car.model}-${index}`}
       class="bg-gray-700 p-6 rounded-2xl flex flex-1 w-[220px] lg:w-[180px]"
     >
       <a
-        href={car.slug}
+        href={`/${car.brand.data.attributes.slug}/${car.slug}`}
         class="flex flex-1 flex-col justify-center items-center"
       >
         <img
           height={90}
-          alt={car.name}
-          src={car.cover}
+          alt={car.model}
           class="h-[90px] object-contain"
+          src={car.avatar.data.attributes.url}
         />
 
         <span class="text-base font-medium mt-2 text-center">
-          {car.name}
+          {car.model}
         </span>
 
         {config.showDescription && (
           <span class="text-base text-center">
-            {car.description}
+            {car.version}
           </span>
         )}
 
@@ -51,7 +52,7 @@ const Item = (config: Props["cardConfig"], car: Car, index: number) => {
         )}
 
         <span class="text-xl text-yellow-400 font-semibold text-center mb-auto">
-          R$ {car.price}
+          {toMoney(car.price)}
         </span>
 
         <div class="w-min mt-9">
@@ -66,6 +67,11 @@ const Item = (config: Props["cardConfig"], car: Car, index: number) => {
 
 export default function CarList(props: Props) {
   const { container, grid, cars, cardConfig: config } = props;
+
+  if (!cars.length) {
+    return null;
+  }
+
   const mapCarsProxy = (car: Car, index: number) => Item(config, car, index);
 
   return (

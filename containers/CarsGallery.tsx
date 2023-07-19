@@ -1,5 +1,6 @@
 import { Car } from "mc/types/types.ts";
 import Button from "mc/components/Button.tsx";
+import { toMoney } from "mc/helpers/number.tsx";
 import Gallery from "mc/components/Gallery.tsx";
 import { LoaderReturnType } from "$live/types.ts";
 
@@ -17,8 +18,8 @@ const Slide = (config: Props["slide"], car: Car, index: number) => {
     <div class="relative flex w-full h-full">
       <div class="block absolute top-0 left-0 z-0 w-full h-full">
         <img
-          alt={car.name}
-          src={car.pictures[0]}
+          alt={car.model}
+          src={car.hero_media.data.attributes.url}
           loading={index === 0 ? "lazy" : "eager"}
           class="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl"
         />
@@ -28,20 +29,27 @@ const Slide = (config: Props["slide"], car: Car, index: number) => {
 
       <div class="absolute top-0 left-0 h-full flex flex-col p-12 justify-center z-20">
         <span class="mb-3 text-3xl font-bold">
-          {car.name}
+          {car.model}
         </span>
 
         <span class="text-lg">
-          {car.description}
+          {car.version}
         </span>
 
         <span class="mb-6 text-lg">
           {config.priceHelper}
-          <span class="ml-1 text-yellow-400 font-bold">R$ {car.price}</span>
+          <span class="ml-1 text-yellow-400 font-bold">
+            {toMoney(car.price)}
+          </span>
         </span>
 
         <div class="w-min">
-          <Button>{config.cta}</Button>
+          <Button
+            as="a"
+            action={`/${car.brand.data.attributes.slug}/${car.slug}`}
+          >
+            {config.cta}
+          </Button>
         </div>
       </div>
     </div>
@@ -52,10 +60,15 @@ const Bullet = (car: Car) => {
   return (
     <div class="bg-gray-800 flex flex-1 flex-col justify-center items-center gap-2">
       <span class="text-sm font-bold">
-        {car.name}
+        {car.model}
       </span>
 
-      <img src={car.cover} alt={car.name} height={65} class="h-[65px]" />
+      <img
+        height={65}
+        alt={car.model}
+        class="h-[65px]"
+        src={car.avatar.data.attributes.url}
+      />
     </div>
   );
 };

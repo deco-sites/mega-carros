@@ -22,6 +22,7 @@ export default function Header(props: Props) {
   const { links, action, brands } = props;
   const drawerRef = useRef<DrawerRef>(null);
   const toggleDrawer = () => drawerRef?.current?.toggle();
+  const url = window?.location?.href ? new URL(window?.location?.href) : null;
 
   return (
     <LimitedDiv>
@@ -61,18 +62,34 @@ export default function Header(props: Props) {
 
       <div class="h-20 border-t-2 border-gray-800 flex">
         <ul class="flex flex-1 flex-row items-center justify-between overflow-y-hidden scrollbar-none scroll-smooth">
-          {brands.map((brand) => (
-            <li class="flex justify-center items-center opacity-50 hover:opacity-100 transition-opacity">
-              <a href={`/${brand.slug}`} class="h-full px-6 w-max">
-                <img
-                  height={40}
-                  alt={brand.name}
-                  src={brand.logo}
-                  class="object-cover h-[40px]"
-                />
-              </a>
-            </li>
-          ))}
+          {brands.map((brand) => {
+            const brandURL = `/${brand.slug}`;
+            const isActive = url?.pathname === brandURL;
+
+            // classes
+            const baseClass = "flex h-full";
+            const opacity = "opacity-50 hover:opacity-100 transition-opacity";
+            const activeBorder = "border-yellow-500 border-b-2";
+            const inactiveBorder = "border-transparent border-b-2";
+            const opacityClass = isActive ? "" : opacity;
+            const borderClass = isActive ? activeBorder : inactiveBorder;
+
+            return (
+              <li class={`${baseClass} ${opacityClass} ${borderClass}`}>
+                <a
+                  href={brandURL}
+                  class="h-full px-6 w-max flex justify-center items-center"
+                >
+                  <img
+                    height={40}
+                    alt={brand.name}
+                    class="object-cover h-[40px]"
+                    src={brand.logo.data.attributes.url}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

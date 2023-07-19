@@ -1,4 +1,5 @@
 import { ComponentChildren } from "preact";
+import { toMoney } from "mc/helpers/number.tsx";
 import { Section } from "$live/blocks/section.ts";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
 import { useLivePageContext } from "$live/pages/LivePage.tsx";
@@ -6,6 +7,7 @@ import HeroBackground from "mc/components/HeroBackground.tsx";
 import type { Props as BackgroundProps } from "mc/components/HeroBackground.tsx";
 
 export interface Props {
+  action?: string;
   labels: {
     title: string;
     description: string;
@@ -29,7 +31,7 @@ function Badge(props: Props) {
 
   const getLabelClasses = () => {
     const size = "flex flex-col p-6 h-[min-content] w-full lg:w-[250px]";
-    const details = "bg-gray-600 bg-opacity-80 rounded-t-2xl";
+    const details = "bg-gray-600 bg-opacity-80 rounded-t-2xl relative z-20";
 
     switch (labelsPosition) {
       case "top-left":
@@ -69,13 +71,14 @@ function Badge(props: Props) {
 
       {labels.priceFrom && labels.priceFrom != "" && (
         <span class="flex items-end text-base line-through text-gray-400 truncate">
-          de R$ {labels.priceFrom}
+          de {toMoney(Number(labels.priceFrom))}
         </span>
       )}
 
       {labels.price && labels.price !== "" && (
         <span class="flex items-center font-semibold text-2xl truncate">
-          por <b class="text-yellow-500 ml-2">R$ {labels.price}</b>
+          por{" "}
+          <b class="text-yellow-500 ml-2">{toMoney(Number(labels.price))}</b>
         </span>
       )}
     </div>
@@ -117,22 +120,33 @@ function HeroContent(props: Props) {
   };
 
   return (
-    <LimitedDiv
-      baseClass="relative z-10 bg-gray-900 lg:bg-transparent"
-      class="flex flex-col-reverse gap-3 lg:flex-col p-6 lg:py-12 lg:px-0 -mt-[287px] lg:mt-0"
-    >
-      <div class={`flex flex-col-reverse ${getContainerClasses()}`}>
-        <div class={`w-full lg:w-[320px] overflow-hidden ${getFormClasses()}`}>
-          {renderSection(formSlot, 0)}
+    <div class="relative z-10">
+      {props.action && props.action !== "" && (
+        <a
+          href={props.action}
+          class="w-full h-full absolute top-0 left-0 z-20"
+        />
+      )}
+
+      <LimitedDiv
+        baseClass="bg-gray-900 lg:bg-transparent"
+        class="flex flex-col-reverse gap-3 lg:flex-col p-6 lg:py-12 lg:px-0 -mt-[287px] lg:mt-0"
+      >
+        <div class={`flex flex-col-reverse ${getContainerClasses()}`}>
+          <div
+            class={`relative z-20 w-full lg:w-[320px] overflow-hidden ${getFormClasses()}`}
+          >
+            {renderSection(formSlot, 0)}
+          </div>
+
+          <Badge {...props} />
         </div>
 
-        <Badge {...props} />
-      </div>
-
-      {/* helper cps */}
-      {!helper && <span class="block h-12 lg:hidden" />}
-      {helper && <div class="h-12">{helper}</div>}
-    </LimitedDiv>
+        {/* helper cps */}
+        {!helper && <span class="block h-12 lg:hidden" />}
+        {helper && <div class="h-12 relative z-20">{helper}</div>}
+      </LimitedDiv>
+    </div>
   );
 }
 

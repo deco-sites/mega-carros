@@ -10,16 +10,10 @@ export default async function loader(
   const { configMC } = ctx;
   const { api, token } = configMC ?? {};
 
-  const endpoint = `${api}/brands?populate=logo`;
+  const endpoint = `${api}/brands?populate=logo&sort=order`;
   const headers = { Authorization: `Bearer ${token}` };
-
   const response = await axiod.get(endpoint, { headers });
 
   // deno-lint-ignore no-explicit-any
-  const formatedResponse: Brand[] = response.data.data.map((item: any) => ({
-    ...item.attributes,
-    logo: item.attributes.logo.data.attributes.url,
-  }));
-
-  return formatedResponse;
+  return response.data.data.map((d: any) => d.attributes);
 }

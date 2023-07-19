@@ -3,20 +3,22 @@ import type { MCContext } from "mc/accounts/mc.ts";
 import axiod from "https://deno.land/x/axiod@0.26.2/mod.ts";
 
 export interface Props {
-  slug: string;
+  sort?: string;
+  limit?: string;
 }
 
 export default async function loader(
   props: Props,
   _req: Request,
   ctx: MCContext,
-): Promise<Car | null> {
-  const { slug } = props;
+): Promise<Car[]> {
   const { configMC } = ctx;
+  const { sort = "updatedAt", limit = "7" } = props;
   const { api, token } = configMC ?? {};
 
   const url = new URL(`${api}/cars`);
-  url.searchParams.append("filters[slug][$eq]", slug);
+  url.searchParams.append("sort", sort);
+  url.searchParams.append("pagination[limit]", limit);
   url.searchParams.append("populate[hero_media][populate]", "*");
   url.searchParams.append("populate[form_media][populate]", "*");
   url.searchParams.append("populate[images][populate]", "*");
@@ -27,8 +29,8 @@ export default async function loader(
   const endpoint = url.toString();
   const headers = { Authorization: `Bearer ${token}` };
   const { data: responseData } = await axiod.get(endpoint, { headers });
-  const { data, meta } = responseData;
+  const { data } = responseData;
 
-  if (meta.pagination.total === 0) return null;
-  return data[0].attributes;
+  // deno-lint-ignore no-explicit-any
+  return data.map((d: any) => d.attributes);
 }
