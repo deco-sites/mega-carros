@@ -44,7 +44,8 @@ const Bullet = (
 };
 
 export default function Gallery(props: Props) {
-  const id = useId();
+  const randomFragment = Math.floor(Math.random() * 100);
+  const id = randomFragment + useId();
   const activeItem = useSignal(0);
   const setItemAsActive = (index: number) => (activeItem.value = index);
 

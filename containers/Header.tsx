@@ -1,11 +1,16 @@
+import { useId } from "preact/hooks";
 import { useRef } from "preact/hooks";
 import { Brand } from "mc/types/types.ts";
 import { asset } from "$fresh/runtime.ts";
 import Icon from "mc/components/Icon.tsx";
 import Button from "mc/components/Button.tsx";
+import { Slider } from "mc/components/Slider.tsx";
 import { LoaderReturnType } from "$live/types.ts";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
 import Drawer, { DrawerRef } from "mc/islands/Drawer.tsx";
+
+import SliderControllerJS from "mc/islands/SliderJS.tsx";
+import SliderController from "mc/components/SliderController.tsx";
 
 export interface Link {
   label: string;
@@ -23,6 +28,9 @@ export default function Header(props: Props) {
   const drawerRef = useRef<DrawerRef>(null);
   const toggleDrawer = () => drawerRef?.current?.toggle();
   const url = window?.location?.href ? new URL(window?.location?.href) : null;
+
+  const randomFragment = Math.floor(Math.random() * 100);
+  const id = randomFragment + useId();
 
   return (
     <LimitedDiv>
@@ -67,14 +75,22 @@ export default function Header(props: Props) {
         })}
       </ul>
 
-      <div class="h-20 border-t-2 border-gray-800 flex">
-        <ul class="flex flex-1 flex-row items-center justify-between overflow-y-hidden scrollbar-none scroll-smooth">
-          {brands.map((brand) => {
+      <div id={id} class="relative h-20 border-t-2 border-gray-800 flex">
+        <Slider
+          snap="scroll-snap-start flex"
+          class="scrollbar-none gap-6 lg:w-[calc(100%+96px)] lg:-mx-12 relative z-20"
+        >
+          {brands.map((brand, index) => {
+            const isFirst = index === 0;
+            const isLast = index === (brands.length - 1);
+            const first = isFirst ? "lg:ml-12" : "";
+            const last = isLast ? "lg:mr-12" : "";
+
             const brandURL = `/${brand.slug}`;
             const isActive = url?.pathname === brandURL;
 
             // classes
-            const baseClass = "flex h-full";
+            const baseClass = `${first} ${last} flex h-full`;
             const opacity = "opacity-50 hover:opacity-100 transition-opacity";
             const activeBorder = "border-yellow-500 border-b-2";
             const inactiveBorder = "border-transparent border-b-2";
@@ -97,7 +113,16 @@ export default function Header(props: Props) {
               </li>
             );
           })}
-        </ul>
+        </Slider>
+
+        <div class="hidden h-full lg:flex absolute w-[calc(100%+96px)] -mx-12 items-center">
+          <SliderController transparent={true} buttonClass="z-30" />
+        </div>
+
+        <span class="hidden lg:block w-12 h-full bg-gradient-to-r from-black absolute top-0 -left-12 z-10" />
+        <span class="hidden lg:block w-12 h-full bg-gradient-to-l from-black absolute top-0 -right-12 z-10" />
+
+        <SliderControllerJS rootId={id} />
       </div>
 
       <Drawer size="280px" ref={drawerRef}>

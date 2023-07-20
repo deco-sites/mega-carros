@@ -18,7 +18,8 @@ function Slide(props: HeroBannerProps) {
 }
 
 export default function HeroBannerSlider(props: Props) {
-  const id = useId();
+  const randomFragment = Math.floor(Math.random() * 100);
+  const id = randomFragment + useId();
 
   return (
     <div id={id}>

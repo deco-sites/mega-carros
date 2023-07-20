@@ -9,7 +9,8 @@ export interface Props {
 }
 
 export default function CardGrid(props: Props) {
-  const id = useId();
+  const randomFragment = Math.floor(Math.random() * 100);
+  const id = randomFragment + useId();
   const { children, cols = 3, class: _class = "" } = props;
 
   const desktopClass = `lg:grid lg:grid-cols-${cols}`;

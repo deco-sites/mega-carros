@@ -14,15 +14,14 @@ export interface Props {
 }
 
 const Item = (cta: string, service: Service, index: number) => {
+  const action = `/servicos/${service.slug}`;
+
   return (
     <div
       key={`${service.name}-${index}`}
       class="bg-black p-6 rounded-2xl flex flex-col justify-center items-center flex-1 w-[180px]"
     >
-      <a
-        href={service.slug}
-        class="flex flex-1 flex-col justify-center items-center"
-      >
+      <a href={action} class="flex flex-1 flex-col justify-center items-center">
         <img
           height={36}
           class="h-[36px]"
@@ -38,8 +37,8 @@ const Item = (cta: string, service: Service, index: number) => {
           <Button
             as="a"
             size="small"
+            action={action}
             mode="secondary"
-            action={`/servicos/${service.slug}`}
           >
             {cta}
           </Button>
