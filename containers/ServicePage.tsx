@@ -1,17 +1,16 @@
 import Button from "mc/components/Button.tsx";
 import { ServicePage } from "mc/types/types.ts";
-import CarList from "mc/containers/CarList.tsx";
 import { Section } from "$live/blocks/section.ts";
 import { LoaderReturnType } from "$live/types.ts";
-import DetailGrid from "mc/components/DetailGrid.tsx";
-import CarGallery from "mc/containers/CarGallery.tsx";
+import SEO from "deco-sites/std/sections/SEO.tsx";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
 import HeroContact from "mc/containers/HeroContact.tsx";
-import YoutubeIframe from "mc/components/YoutubeIframe.tsx";
 import type { Props as CarListProps } from "mc/containers/CarList.tsx";
 import HeroBannerGenericSection from "mc/sections/HeroBannerGeneric.tsx";
 
 export interface Props {
+  /** @description use {{service}} to apply service title to page */
+  pageTitle: string;
   formSlot: Section;
   servicePage: LoaderReturnType<ServicePage>;
 }
@@ -118,7 +117,6 @@ const renderServiceDescription = (props: Props) => {
 };
 
 export default function ServicePageContainer(props: Props) {
-  console.log("testando", props.servicePage.service);
   if (!props.servicePage.service) {
     return (
       <LimitedDiv baseClass="bg-white" class="py-12 text-black">
@@ -128,8 +126,16 @@ export default function ServicePageContainer(props: Props) {
     );
   }
 
+  const service = props.servicePage.service;
+
   return (
     <>
+      <SEO
+        description={service.description}
+        image={service.form_media.data.attributes.url}
+        title={props.pageTitle.replace("{{service}}", service.name)}
+      />
+
       {renderHeroBanner(props)}
       {renderServiceDescription(props)}
       {renderHeroContact(props)}

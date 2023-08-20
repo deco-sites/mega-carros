@@ -9713,6 +9713,11 @@
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
           "title": "Form Slot"
         },
+        "pageTitle": {
+          "type": "string",
+          "description": "use {{brand}} to apply service title to page",
+          "title": "Page Title"
+        },
         "carList": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL0Nhckxpc3QudHN4@omitY2Fycw==Props",
           "title": "Car List"
@@ -9724,6 +9729,7 @@
       },
       "required": [
         "formSlot",
+        "pageTitle",
         "carList",
         "brandPage"
       ],
@@ -9785,6 +9791,11 @@
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
           "title": "Form Slot"
         },
+        "pageTitle": {
+          "type": "string",
+          "description": "use {{car}} to apply service title to page",
+          "title": "Page Title"
+        },
         "carPage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@CarPage",
           "title": "Car Page"
@@ -9796,6 +9807,7 @@
       },
       "required": [
         "formSlot",
+        "pageTitle",
         "carPage",
         "carList"
       ],
@@ -10289,6 +10301,11 @@
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9jb250YWluZXJzL1NlcnZpY2VQYWdlLnRzeA==@Props": {
       "type": "object",
       "properties": {
+        "pageTitle": {
+          "type": "string",
+          "description": "use {{service}} to apply service title to page",
+          "title": "Page Title"
+        },
         "formSlot": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
           "title": "Form Slot"
@@ -10299,6 +10316,7 @@
         }
       },
       "required": [
+        "pageTitle",
         "formSlot",
         "servicePage"
       ],
