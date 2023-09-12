@@ -92,6 +92,9 @@ function GlobalTags() {
       `,
         }}
       />
+
+      {/* IMASK */}
+      <script src="https://unpkg.com/imask"></script>
     </Head>
   );
 }
