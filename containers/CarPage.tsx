@@ -2,6 +2,7 @@ import { CarPage } from "mc/types/types.ts";
 import CarList from "mc/containers/CarList.tsx";
 import { Section } from "$live/blocks/section.ts";
 import { LoaderReturnType } from "$live/types.ts";
+import SEO from "deco-sites/std/sections/SEO.tsx";
 import DetailGrid from "mc/components/DetailGrid.tsx";
 import CarGallery from "mc/containers/CarGallery.tsx";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
@@ -12,9 +13,14 @@ import type { Props as CarListProps } from "mc/containers/CarList.tsx";
 
 export interface Props {
   formSlot: Section;
+  /** @description use {{car}} to apply service title to page */
+  pageTitle: string;
   carPage: LoaderReturnType<CarPage>;
   carList: Omit<CarListProps, "cars">;
 }
+
+const CAR_DESCRIPTION =
+  `Confira todos os detalhes do {{car}} e solicite agora mesmo uma proposta que entraremos em contato com a melhor oferta para você.`;
 
 const renderHeroBanner = (props: Props) => {
   const { carPage, formSlot } = props;
@@ -67,9 +73,7 @@ const renderCarDescription = (props: Props) => {
       <h1 class="text-3xl">{title}</h1>
 
       <p class="text-xl mb-12">
-        Confira todos os detalhes do {title}{" "}
-        e solicite agora mesmo uma proposta que entraremos em contato com a
-        melhor oferta para você.
+        {CAR_DESCRIPTION.replace("{{car}}", title)}
       </p>
 
       <DetailGrid
@@ -148,8 +152,17 @@ export default function CarPageContainer(props: Props) {
     );
   }
 
+  const car = props.carPage.car;
+  const carName = `${car.model} ${car.version}`;
+
   return (
     <>
+      <SEO
+        description={CAR_DESCRIPTION.replace("{{car}}", carName)}
+        title={props.pageTitle.replace("{{car}}", carName)}
+        image={car.form_media.data.attributes.url}
+      />
+
       {renderHeroBanner(props)}
       <CarGallery car={props.carPage.car} />
       {renderCarDescription(props)}

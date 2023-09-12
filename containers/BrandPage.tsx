@@ -4,6 +4,7 @@ import { toMoney } from "mc/helpers/number.tsx";
 import CarList from "mc/containers/CarList.tsx";
 import { Section } from "$live/blocks/section.ts";
 import { LoaderReturnType } from "$live/types.ts";
+import SEO from "deco-sites/std/sections/SEO.tsx";
 import LimitedDiv from "mc/components/LimitedDiv.tsx";
 import HeroContact from "mc/containers/HeroContact.tsx";
 import type { Props as CarListProps } from "mc/containers/CarList.tsx";
@@ -11,6 +12,8 @@ import HeroBannerSliderCarSection from "mc/sections/HeroBannerCarSlider.tsx";
 
 export interface Props {
   formSlot: Section;
+  /** @description use {{brand}} to apply service title to page */
+  pageTitle: string;
   carList: Omit<CarListProps, "cars">;
   brandPage: LoaderReturnType<BrandPage>;
 }
@@ -121,8 +124,16 @@ export default function BrandPage(props: Props) {
     );
   }
 
+  const brand = props.brandPage.brand;
+
   return (
     <>
+      <SEO
+        description={brand.description}
+        image={brand.form_media.data.attributes.url}
+        title={props.pageTitle.replace("{{brand}}", brand.name)}
+      />
+
       {renderHeroBannerCarSlider(props)}
       {renderBrandDescription(props)}
       <CarList {...props.carList} cars={props.brandPage.cars} />

@@ -4,37 +4,43 @@
 
 import { DecoManifest } from "$live/types.ts";
 import * as $$0 from "./accounts/mc.ts";
-import * as $$$0 from "./loaders/bestOffers.ts";
-import * as $$$1 from "./loaders/services.ts";
-import * as $$$2 from "./loaders/servicePage.ts";
-import * as $$$3 from "./loaders/car.ts";
+import * as $$$0 from "./loaders/car.ts";
+import * as $$$1 from "./loaders/servicePage.ts";
+import * as $$$2 from "./loaders/bestOffers.ts";
+import * as $$$3 from "./loaders/brandPage.ts";
 import * as $$$4 from "./loaders/carPage.ts";
+<<<<<<< HEAD
 import * as $$$5 from "./loaders/brands.ts";
 import * as $$$6 from "./loaders/bestCars.ts";
 import * as $$$7 from "./loaders/contact.ts";
 import * as $$$8 from "./loaders/brandPage.ts";
+=======
+import * as $$$5 from "./loaders/bestCars.ts";
+import * as $$$6 from "./loaders/brands.ts";
+import * as $$$7 from "./loaders/services.ts";
+>>>>>>> a62bf7326f947b68667640b6d5e87f5e86dffd3d
 import * as $$$$0 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/Drawer.tsx";
-import * as $$$$$1 from "./islands/ContactForm.tsx";
-import * as $$$$$2 from "./islands/CarGallery.tsx";
-import * as $$$$$3 from "./islands/DetailGrid.tsx";
-import * as $$$$$4 from "./islands/CarsGallery.tsx";
-import * as $$$$$5 from "./islands/Header.tsx";
-import * as $$$$$6 from "./islands/SliderJS.tsx";
-import * as $$$$$$$$0 from "./sections/ContactForm.tsx";
-import * as $$$$$$$$1 from "./sections/ServicePage.tsx";
-import * as $$$$$$$$2 from "./sections/CarGallery.tsx";
-import * as $$$$$$$$3 from "./sections/HeroBannerGeneric.tsx";
-import * as $$$$$$$$4 from "./sections/Services.tsx";
-import * as $$$$$$$$5 from "./sections/Footer.tsx";
-import * as $$$$$$$$6 from "./sections/HeroContact.tsx";
-import * as $$$$$$$$7 from "./sections/CarList.tsx";
-import * as $$$$$$$$8 from "./sections/CarsGallery.tsx";
-import * as $$$$$$$$9 from "./sections/BrandPage.tsx";
-import * as $$$$$$$$10 from "./sections/HeroBannerCar.tsx";
+import * as $$$$$0 from "./islands/ContactForm.tsx";
+import * as $$$$$1 from "./islands/SliderJS.tsx";
+import * as $$$$$2 from "./islands/Drawer.tsx";
+import * as $$$$$3 from "./islands/Header.tsx";
+import * as $$$$$4 from "./islands/DetailGrid.tsx";
+import * as $$$$$5 from "./islands/CarsGallery.tsx";
+import * as $$$$$6 from "./islands/CarGallery.tsx";
+import * as $$$$$$$$0 from "./sections/CarList.tsx";
+import * as $$$$$$$$1 from "./sections/HeroBannerGeneric.tsx";
+import * as $$$$$$$$2 from "./sections/ContactForm.tsx";
+import * as $$$$$$$$3 from "./sections/Footer.tsx";
+import * as $$$$$$$$4 from "./sections/BrandPage.tsx";
+import * as $$$$$$$$5 from "./sections/ServicePage.tsx";
+import * as $$$$$$$$6 from "./sections/Header.tsx";
+import * as $$$$$$$$7 from "./sections/HeroContact.tsx";
+import * as $$$$$$$$8 from "./sections/HeroBannerCar.tsx";
+import * as $$$$$$$$9 from "./sections/CarsGallery.tsx";
+import * as $$$$$$$$10 from "./sections/HeroBannerCarSlider.tsx";
 import * as $$$$$$$$11 from "./sections/CarPage.tsx";
-import * as $$$$$$$$12 from "./sections/Header.tsx";
-import * as $$$$$$$$13 from "./sections/HeroBannerCarSlider.tsx";
+import * as $$$$$$$$12 from "./sections/CarGallery.tsx";
+import * as $$$$$$$$13 from "./sections/Services.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -178,6 +184,7 @@ const manifest = {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
+<<<<<<< HEAD
     "deco-sites/mega-carros/loaders/bestCars.ts": $$$6,
     "deco-sites/mega-carros/loaders/bestOffers.ts": $$$0,
     "deco-sites/mega-carros/loaders/brandPage.ts": $$$8,
@@ -187,6 +194,16 @@ const manifest = {
     "deco-sites/mega-carros/loaders/contact.ts": $$$7,
     "deco-sites/mega-carros/loaders/servicePage.ts": $$$2,
     "deco-sites/mega-carros/loaders/services.ts": $$$1,
+=======
+    "deco-sites/mega-carros/loaders/bestCars.ts": $$$5,
+    "deco-sites/mega-carros/loaders/bestOffers.ts": $$$2,
+    "deco-sites/mega-carros/loaders/brandPage.ts": $$$3,
+    "deco-sites/mega-carros/loaders/brands.ts": $$$6,
+    "deco-sites/mega-carros/loaders/car.ts": $$$0,
+    "deco-sites/mega-carros/loaders/carPage.ts": $$$4,
+    "deco-sites/mega-carros/loaders/servicePage.ts": $$$1,
+    "deco-sites/mega-carros/loaders/services.ts": $$$7,
+>>>>>>> a62bf7326f947b68667640b6d5e87f5e86dffd3d
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
@@ -225,13 +242,13 @@ const manifest = {
     "./routes/live/workflows/run.ts": $live_workflows,
   },
   "islands": {
-    "./islands/CarGallery.tsx": $$$$$2,
-    "./islands/CarsGallery.tsx": $$$$$4,
-    "./islands/ContactForm.tsx": $$$$$1,
-    "./islands/DetailGrid.tsx": $$$$$3,
-    "./islands/Drawer.tsx": $$$$$0,
-    "./islands/Header.tsx": $$$$$5,
-    "./islands/SliderJS.tsx": $$$$$6,
+    "./islands/CarGallery.tsx": $$$$$6,
+    "./islands/CarsGallery.tsx": $$$$$5,
+    "./islands/ContactForm.tsx": $$$$$0,
+    "./islands/DetailGrid.tsx": $$$$$4,
+    "./islands/Drawer.tsx": $$$$$2,
+    "./islands/Header.tsx": $$$$$3,
+    "./islands/SliderJS.tsx": $$$$$1,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -239,20 +256,20 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/mega-carros/sections/BrandPage.tsx": $$$$$$$$9,
-    "deco-sites/mega-carros/sections/CarGallery.tsx": $$$$$$$$2,
-    "deco-sites/mega-carros/sections/CarList.tsx": $$$$$$$$7,
+    "deco-sites/mega-carros/sections/BrandPage.tsx": $$$$$$$$4,
+    "deco-sites/mega-carros/sections/CarGallery.tsx": $$$$$$$$12,
+    "deco-sites/mega-carros/sections/CarList.tsx": $$$$$$$$0,
     "deco-sites/mega-carros/sections/CarPage.tsx": $$$$$$$$11,
-    "deco-sites/mega-carros/sections/CarsGallery.tsx": $$$$$$$$8,
-    "deco-sites/mega-carros/sections/ContactForm.tsx": $$$$$$$$0,
-    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$5,
-    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$12,
-    "deco-sites/mega-carros/sections/HeroBannerCar.tsx": $$$$$$$$10,
-    "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx": $$$$$$$$13,
-    "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx": $$$$$$$$3,
-    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$6,
-    "deco-sites/mega-carros/sections/ServicePage.tsx": $$$$$$$$1,
-    "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$4,
+    "deco-sites/mega-carros/sections/CarsGallery.tsx": $$$$$$$$9,
+    "deco-sites/mega-carros/sections/ContactForm.tsx": $$$$$$$$2,
+    "deco-sites/mega-carros/sections/Footer.tsx": $$$$$$$$3,
+    "deco-sites/mega-carros/sections/Header.tsx": $$$$$$$$6,
+    "deco-sites/mega-carros/sections/HeroBannerCar.tsx": $$$$$$$$8,
+    "deco-sites/mega-carros/sections/HeroBannerCarSlider.tsx": $$$$$$$$10,
+    "deco-sites/mega-carros/sections/HeroBannerGeneric.tsx": $$$$$$$$1,
+    "deco-sites/mega-carros/sections/HeroContact.tsx": $$$$$$$$7,
+    "deco-sites/mega-carros/sections/ServicePage.tsx": $$$$$$$$5,
+    "deco-sites/mega-carros/sections/Services.tsx": $$$$$$$$13,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
