@@ -11,7 +11,8 @@ import * as $$$3 from "./loaders/car.ts";
 import * as $$$4 from "./loaders/carPage.ts";
 import * as $$$5 from "./loaders/brands.ts";
 import * as $$$6 from "./loaders/bestCars.ts";
-import * as $$$7 from "./loaders/brandPage.ts";
+import * as $$$7 from "./loaders/contact.ts";
+import * as $$$8 from "./loaders/brandPage.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Drawer.tsx";
 import * as $$$$$1 from "./islands/ContactForm.tsx";
@@ -179,10 +180,11 @@ const manifest = {
     "$live/loaders/workflows/get.ts": i2$$$2,
     "deco-sites/mega-carros/loaders/bestCars.ts": $$$6,
     "deco-sites/mega-carros/loaders/bestOffers.ts": $$$0,
-    "deco-sites/mega-carros/loaders/brandPage.ts": $$$7,
+    "deco-sites/mega-carros/loaders/brandPage.ts": $$$8,
     "deco-sites/mega-carros/loaders/brands.ts": $$$5,
     "deco-sites/mega-carros/loaders/car.ts": $$$3,
     "deco-sites/mega-carros/loaders/carPage.ts": $$$4,
+    "deco-sites/mega-carros/loaders/contact.ts": $$$7,
     "deco-sites/mega-carros/loaders/servicePage.ts": $$$2,
     "deco-sites/mega-carros/loaders/services.ts": $$$1,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,

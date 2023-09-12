@@ -56,6 +56,7 @@
               "deco-sites/mega-carros/loaders/brands.ts",
               "deco-sites/mega-carros/loaders/car.ts",
               "deco-sites/mega-carros/loaders/carPage.ts",
+              "deco-sites/mega-carros/loaders/contact.ts",
               "deco-sites/mega-carros/loaders/servicePage.ts",
               "deco-sites/mega-carros/loaders/services.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
@@ -5244,6 +5245,47 @@
       ],
       "title": "deco-sites/mega-carros/loaders/carPage.ts@Props"
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@ContactHandler": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "api": {
+              "type": "string",
+              "title": "Api"
+            },
+            "token": {
+              "type": "string",
+              "title": "Token"
+            }
+          },
+          "required": [
+            "api",
+            "token"
+          ],
+          "title": "deco-sites/mega-carros/types/types.ts@ContactHandler"
+        },
+        {
+          "title": "deco-sites/mega-carros/loaders/contact.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/mega-carros/loaders/contact.ts"
+              ],
+              "default": "deco-sites/mega-carros/loaders/contact.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@Service": {
       "type": "object",
       "properties": {
@@ -9056,6 +9098,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "title": "Terms"
         },
+        "contact": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy90eXBlcy90eXBlcy50cw==@ContactHandler",
+          "title": "Contact"
+        },
         "successMessage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "description": "The success message to be shown when form is sent",
@@ -9065,6 +9111,7 @@
       "required": [
         "cta",
         "terms",
+        "contact",
         "successMessage"
       ],
       "title": "deco-sites/mega-carros/containers/ContactForm.tsx@Props"
@@ -12444,6 +12491,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NvbnRhY3QudHM=": {
+      "title": "deco-sites/mega-carros/loaders/contact.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/mega-carros/loaders/contact.ts"
+          ],
+          "default": "deco-sites/mega-carros/loaders/contact.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz": {
       "title": "deco-sites/mega-carros/loaders/servicePage.ts",
       "type": "object",
@@ -14681,6 +14744,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NhclBhZ2UudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL2NvbnRhY3QudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9tZWdhLWNhcnJvcy9sb2FkZXJzL3NlcnZpY2VQYWdlLnRz"

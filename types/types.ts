@@ -95,3 +95,8 @@ export interface CarPage {
 export interface ServicePage {
   service: Service | null;
 }
+
+export interface ContactHandler {
+  api: string;
+  token: string;
+}

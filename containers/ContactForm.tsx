@@ -1,11 +1,15 @@
 import Button from "mc/components/Button.tsx";
 import { useRef, useState } from "preact/hooks";
-import BasicInput, { BasicInputRef } from "mc/components/BasicInput.tsx";
+import { LoaderReturnType } from "$live/types.ts";
+import { ContactHandler } from "mc/types/types.ts";
+import axiod from "https://deno.land/x/axiod@0.26.2/mod.ts";
 import type { HTML } from "deco-sites/std/components/types.ts";
+import BasicInput, { BasicInputRef } from "mc/components/BasicInput.tsx";
 
 export interface Props {
   cta: string;
   terms: HTML;
+  contact: LoaderReturnType<ContactHandler>;
 
   /**
    * @description The success message to be shown when form is sent
@@ -14,7 +18,7 @@ export interface Props {
 }
 
 export default function ContactForm(props: Props) {
-  const { cta, terms, successMessage } = props;
+  const { cta, terms, successMessage, contact } = props;
 
   const [isSending, setIsSending] = useState(false);
   const [isFormSent, setIsFormSent] = useState(false);
@@ -51,7 +55,7 @@ export default function ContactForm(props: Props) {
     return !errors.name && !errors.email && !errors.phone;
   };
 
-  const submit = () => {
+  const submit = async () => {
     if (!validate() || isSending) {
       return;
     }
@@ -61,8 +65,11 @@ export default function ContactForm(props: Props) {
     const phone = getPhone();
 
     setIsSending(true);
-    console.log("sending data", { name, email, phone });
-    setTimeout(() => setIsFormSent(true), 1500);
+    const endpoint = `${contact.api}/contact`;
+    const headers = { Authorization: `Bearer ${contact.token}` };
+    const payload = { email, name, page: window.location.href, phone };
+    await axiod.post(endpoint, payload, { headers });
+    setIsFormSent(true);
   };
 
   return (
